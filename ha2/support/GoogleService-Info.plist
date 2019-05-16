@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>209008513450-tar5abj95je2vkgpa0m68rm40f2hnrrn.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.209008513450-tar5abj95je2vkgpa0m68rm40f2hnrrn</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCW3r7WBqURyBN2_rpKLZ7Kvs0HXL3z_L4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>209008513450</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>ha2.ha2</string>
+	<key>PROJECT_ID</key>
+	<string>authileha2</string>
+	<key>STORAGE_BUCKET</key>
+	<string>authileha2.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:209008513450:ios:4cab3c38416a3c93</string>
+	<key>DATABASE_URL</key>
+	<string>https://authileha2.firebaseio.com</string>
+</dict>
+</plist>
