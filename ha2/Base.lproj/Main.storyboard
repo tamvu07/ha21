@@ -1348,6 +1348,7 @@
                     <navigationItem key="navigationItem" id="qFv-sK-z5F"/>
                     <connections>
                         <outlet property="bt_chon1_CV" destination="MsE-TW-xyK" id="7mE-Kc-tbK"/>
+                        <outlet property="lb_vitrimuontuyen" destination="gaS-6z-8SK" id="ni3-7d-LM4"/>
                         <segue destination="Ewt-yf-3KQ" kind="push" id="gdT-GL-3kO"/>
                     </connections>
                 </viewController>

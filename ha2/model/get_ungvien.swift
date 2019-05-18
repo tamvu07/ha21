@@ -17,8 +17,10 @@ class get_ungvien {
             if let postDict = snapshot.value as? [String:Any], currentUserId == snapshot.key {
                 // lay ra thong tin ca nhan
                 let thongtin: [String:Any] = postDict["Thongtincanhan"] as! [String:Any]
+                let HS = thongtin["Hoso"] as! String
+                let hs2 = Int(HS)
                 
-                let canhan = Thongtincanhan.init(email: thongtin["Email"] as! String, linkAvatar: thongtin["LinkAvatar"] as! String, hoso: thongtin["Hoso"] as! Int)
+                let canhan = Thongtincanhan.init(email: thongtin["Email"] as! String, linkAvatar: thongtin["LinkAvatar"] as! String, hoso: hs2!)
                 
                 let thongtincanhan: Thongtincanhan = canhan
                 
@@ -30,7 +32,7 @@ class get_ungvien {
                 let thongtinlienhe: Thongtinlienhe = lienhe
 
                 // lay ra thong tin tong quan
-                let thongtintq: [String:Any] = postDict["Thongtinlienhe"] as! [String:Any]
+                let thongtintq: [String:Any] = postDict["Thongtintongquan"] as! [String:Any]
                 
                 let tongquan = Thongtintongquan.init(capbachientai: thongtintq["capbachientai"] as! String, capbacmongmuon: thongtintq["capbacmongmuon"] as! String, diadiemmongmuon: thongtintq["diadiemmongmuon"] as! String, hinhthuclamviec: thongtintq["hinhthuclamviec"] as! String, mucluongtoithieu: thongtintq["mucluongtoithieu"] as! String, nghanhnghemongmuon: thongtintq["nghanhnghemongmuon"] as! String, sonamkinhnghiem: thongtintq["sonamkinhnghiem"] as! String, trinhdohocvan: thongtintq["trinhdohocvan"] as! String, vitrimongmuon: thongtintq["vitrimongmuon"] as! String)
             
