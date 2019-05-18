@@ -35,6 +35,7 @@
 		18E7E200228EE5AA00CE8997 /* User_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E7E1FF228EE5AA00CE8997 /* User_1.swift */; };
 		18ED58E1227BDFCE007F86C9 /* CELL_Search_01_01_01TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED58E0227BDFCE007F86C9 /* CELL_Search_01_01_01TableViewCell.swift */; };
 		18EECA86228AD73700AAB597 /* MH_chucnang_CT_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EECA85228AD73700AAB597 /* MH_chucnang_CT_ViewController.swift */; };
+		18F88414228F991200F192DC /* get_ungvien.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F88413228F991200F192DC /* get_ungvien.swift */; };
 		18FCDE36226090A9008A8552 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FCDE35226090A8008A8552 /* SWRevealViewController.m */; };
 		18FCDE382260958C008A8552 /* MH_Chuyen_Menu_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FCDE372260958C008A8552 /* MH_Chuyen_Menu_ViewController.swift */; };
 		18FD89532261722F000353B7 /* extension_function.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FD89522261722F000353B7 /* extension_function.swift */; };
@@ -72,6 +73,7 @@
 		18E7E1FF228EE5AA00CE8997 /* User_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User_1.swift; sourceTree = "<group>"; };
 		18ED58E0227BDFCE007F86C9 /* CELL_Search_01_01_01TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CELL_Search_01_01_01TableViewCell.swift; sourceTree = "<group>"; };
 		18EECA85228AD73700AAB597 /* MH_chucnang_CT_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MH_chucnang_CT_ViewController.swift; sourceTree = "<group>"; };
+		18F88413228F991200F192DC /* get_ungvien.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = get_ungvien.swift; sourceTree = "<group>"; };
 		18FCDE33226090A7008A8552 /* ha2-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ha2-Bridging-Header.h"; sourceTree = "<group>"; };
 		18FCDE34226090A8008A8552 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		18FCDE35226090A8008A8552 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				18FD89522261722F000353B7 /* extension_function.swift */,
 				18E2A2FD22620018007638F6 /* CongTy.swift */,
 				18E7E1FF228EE5AA00CE8997 /* User_1.swift */,
+				18F88413228F991200F192DC /* get_ungvien.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 				18DA6871228861390019E23F /* MH_XemTruocHoSo_ViewController.swift in Sources */,
 				18EECA86228AD73700AAB597 /* MH_chucnang_CT_ViewController.swift in Sources */,
 				18DEF3832260CC400058DB80 /* User.swift in Sources */,
+				18F88414228F991200F192DC /* get_ungvien.swift in Sources */,
 				18ED58E1227BDFCE007F86C9 /* CELL_Search_01_01_01TableViewCell.swift in Sources */,
 				18FCDE36226090A9008A8552 /* SWRevealViewController.m in Sources */,
 				182EDC65227AEDFB00D3BF57 /* MH_Search_01_01_ViewController.swift in Sources */,
