@@ -28,6 +28,7 @@
 		18908B58228FEC6C009DD6CB /* Thongtincanhan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18908B57228FEC6C009DD6CB /* Thongtincanhan.swift */; };
 		18908B5A228FED08009DD6CB /* Thongtinlienhe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18908B59228FED08009DD6CB /* Thongtinlienhe.swift */; };
 		18908B5C228FEE55009DD6CB /* Thongtintongquan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18908B5B228FEE55009DD6CB /* Thongtintongquan.swift */; };
+		18908B5E228FF495009DD6CB /* UngVien_New.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18908B5D228FF495009DD6CB /* UngVien_New.swift */; };
 		1897D9B62282761900E3F4EF /* MH_Thongtintongquan_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1897D9B52282761900E3F4EF /* MH_Thongtintongquan_ViewController.swift */; };
 		18A516AE226030BD0003F2E8 /* TrangChu_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A516AD226030BD0003F2E8 /* TrangChu_ViewController.swift */; };
 		18DA6871228861390019E23F /* MH_XemTruocHoSo_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DA6870228861390019E23F /* MH_XemTruocHoSo_ViewController.swift */; };
@@ -69,6 +70,7 @@
 		18908B57228FEC6C009DD6CB /* Thongtincanhan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thongtincanhan.swift; sourceTree = "<group>"; };
 		18908B59228FED08009DD6CB /* Thongtinlienhe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thongtinlienhe.swift; sourceTree = "<group>"; };
 		18908B5B228FEE55009DD6CB /* Thongtintongquan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thongtintongquan.swift; sourceTree = "<group>"; };
+		18908B5D228FF495009DD6CB /* UngVien_New.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UngVien_New.swift; sourceTree = "<group>"; };
 		1897D9B52282761900E3F4EF /* MH_Thongtintongquan_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MH_Thongtintongquan_ViewController.swift; sourceTree = "<group>"; };
 		18A516AD226030BD0003F2E8 /* TrangChu_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrangChu_ViewController.swift; sourceTree = "<group>"; };
 		18DA6870228861390019E23F /* MH_XemTruocHoSo_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MH_XemTruocHoSo_ViewController.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				18E2A2FD22620018007638F6 /* CongTy.swift */,
 				18E7E1FF228EE5AA00CE8997 /* User_1.swift */,
 				18F88413228F991200F192DC /* get_ungvien.swift */,
+				18908B5D228FF495009DD6CB /* UngVien_New.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 				18FCDE36226090A9008A8552 /* SWRevealViewController.m in Sources */,
 				182EDC65227AEDFB00D3BF57 /* MH_Search_01_01_ViewController.swift in Sources */,
 				18908B58228FEC6C009DD6CB /* Thongtincanhan.swift in Sources */,
+				18908B5E228FF495009DD6CB /* UngVien_New.swift in Sources */,
 				18E2A30022620EF2007638F6 /* CELLS_Trang_Chu_TableViewCell.swift in Sources */,
 				18232C90227B499700D9639A /* MH_Search_01_01_01ViewController.swift in Sources */,
 				18783968227A9FC9001C1E12 /* MH_Search_01_ViewController.swift in Sources */,
