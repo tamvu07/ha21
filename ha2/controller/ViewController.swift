@@ -31,6 +31,7 @@ class ViewController: UIViewController {
     @IBAction func bt_Login(_ sender: Any) {
         let email = txt_email.text
         let pass = txt_pass.text
+        var chuyenmanhinh = 0
         if(email == "" || pass == "")
         {
             let alert  = UIAlertController(title: "Thong bao", message: "Email hoac password chua nhap !", preferredStyle: .alert)
@@ -65,8 +66,7 @@ class ViewController: UIViewController {
                         currentUser_1 = User_1.init(id: (user?.uid)!, email: (user?.email)!, linkAvatar: avatar, status_HS: status_HS)
                                          User_flag = 1
                                         User_name = currentUser_1.email
-                                        self?.goto_MH_chucnang()
-                        
+                        self!.goto_MH_chucnang()
                     }
                     else {
 //                        print("KHONG CO POSTDICT HOAC ID USER KHONG CO TRONG TABLE USER1")
@@ -78,22 +78,18 @@ class ViewController: UIViewController {
                             currentUser_2 = User.init(id: (user?.uid)!, email: (user?.email)!, linkAvatar: avatar)
                             User_flag = 1
                             User_name = currentUser_2.email
-                            self?.goto_MH_chucnang_CT()
+                            self!.goto_MH_chucnang_CT()
                         }
-                        else {
-                            let alert:UIAlertController = UIAlertController(title: "Xin bạn phai đăng ký trươc khi đăng nhập !!", message: "", preferredStyle: .alert)
-                            let bt:UIAlertAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-                            alert.addAction(bt)
-                            self?.present(alert, animated: true, completion: nil)
-//                            print("........tim khong thay ai !...............\n")
-                        }
+//                        else {
+//                            let alert:UIAlertController = UIAlertController(title: "Bạn phải đăng ký trươc khi đăng nhập !!", message: "", preferredStyle: .alert)
+//                            let bt:UIAlertAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+//                            alert.addAction(bt)
+//                            self?.present(alert, animated: true, completion: nil)
+////                            print("........tim khong thay ai !...............\n")
+//                        }
                         })
                     }
                 })
-                
-                
-                
-                
             }
             else
             {
@@ -107,7 +103,6 @@ class ViewController: UIViewController {
             }
             }
         }
-
     }
     
     // button dang ky

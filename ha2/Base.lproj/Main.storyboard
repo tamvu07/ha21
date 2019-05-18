@@ -1126,6 +1126,9 @@
                                                     <rect key="frame" x="0.0" y="112" width="375" height="37.5"/>
                                                     <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal" title="Trang chu"/>
+                                                    <connections>
+                                                        <action selector="bt_trangchu:" destination="dcJ-y3-XM3" eventType="touchUpInside" id="vbh-l3-4e6"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -1292,6 +1295,9 @@
                                                 <rect key="frame" x="10" y="10" width="335" height="46.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <state key="normal" title="Button_ve_trangchu"/>
+                                                <connections>
+                                                    <action selector="bt_trangchu:" destination="KN1-eE-78q" eventType="touchUpInside" id="9ow-L0-rrv"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
