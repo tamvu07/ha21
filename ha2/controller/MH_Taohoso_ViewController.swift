@@ -24,7 +24,9 @@ class MH_Taohoso_ViewController: UIViewController {
         textView.layer.borderWidth = 1
         textView.layer.cornerRadius = 8
         textView.clipsToBounds = true
-        
+        //
+//        tttk = 1
+//        tttq = 1
     }
 
 
@@ -40,6 +42,12 @@ class MH_Taohoso_ViewController: UIViewController {
         self.navigationItem.titleView = titleView
     }
     
+    func goto_MH_Search_01_01_01_DaCoHoSo_Chitietcongty()
+    {
+        let scr = storyboard?.instantiateViewController(withIdentifier: "MH_Search_01_01_01_DaCoHoSo_Chitietcongty")
+        navigationController?.pushViewController(scr!, animated: true)
+    }
+    
     func goto_MH_Thongtintaikhoan()
     {
         let scr = storyboard?.instantiateViewController(withIdentifier: "MH_Thongtintaikhoan")
@@ -53,7 +61,33 @@ class MH_Taohoso_ViewController: UIViewController {
     }
     
     @IBAction func bt_action_DHS(_ sender: Any) {
-        print(".........xin chao !.......\n")
+        if(tttk == 0 || tttq == 0)
+        {
+            let alert:UIAlertController = UIAlertController(title: "Vui lòng nhập dữ liệu bắt buộc !", message: "", preferredStyle: .alert)
+            let bt:UIAlertAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alert.addAction(bt)
+            self.present(alert, animated: true, completion: nil)
+        }else{
+          
+            if(currentUser_1.status_HS == 0)
+            {
+                let f = chucnang()
+                f.set_status_HS_User1()
+               self.goto_MH_Search_01_01_01_DaCoHoSo_Chitietcongty()
+                let alert:UIAlertController = UIAlertController(title: "Đăng Hồ sơ thành công", message: "", preferredStyle: .alert)
+                let bt:UIAlertAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                alert.addAction(bt)
+                self.present(alert, animated: true, completion: nil)
+                
+                
+            }else{
+                let alert:UIAlertController = UIAlertController(title: " Đã tạo hồ sơ rồi !", message: "", preferredStyle: .alert)
+                let bt:UIAlertAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                alert.addAction(bt)
+                self.present(alert, animated: true, completion: nil)
+            }
+
+      }
         
     }
     
@@ -107,7 +141,7 @@ extension MH_Taohoso_ViewController: UITableViewDataSource,UITableViewDelegate
             {
                 a.lb_1.text = "Thông tin tài khoản(bắt buộc)"
                 print("....da luu roi....\(tttk)...........\n")
-                if(tttk == 1)
+                if(currentUser_1.status_HS == 1)
                 {
                     var btnColor = UIButton(type: .custom)
                     
@@ -119,7 +153,7 @@ extension MH_Taohoso_ViewController: UITableViewDataSource,UITableViewDelegate
             }else  if(indexPath.row == 1)
             {
                 a.lb_1.text = "Thông tin tổng quát(bắt buộc)"
-                if(tttq == 1)
+                if(currentUser_1.status_HS == 1)
                 {
                     var btnColor = UIButton(type: .custom)
                     

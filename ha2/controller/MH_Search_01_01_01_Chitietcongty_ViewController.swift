@@ -45,7 +45,12 @@ class MH_Search_01_01_01_Chitietcongty_ViewController: UIViewController {
     }
     
     @IBAction func bt_nopdon(_ sender: Any) {
-        self.goto_MH_Taohoso()
+        if(currentUser_1.status_HS == 1)
+        {
+            goto_MH_Search_01_01_01_DaCoHoSo_Chitietcongty()
+        }else{
+            goto_MH_Taohoso()
+        }
     }
     
     func goto_MH_Taohoso()
@@ -55,4 +60,16 @@ class MH_Search_01_01_01_Chitietcongty_ViewController: UIViewController {
         navigationController?.pushViewController(scr!, animated: true)
     }
     
+    func goto_MH_xemHoSo()
+    {
+        
+        let scr = storyboard?.instantiateViewController(withIdentifier: "MH_xemHoSo")
+        navigationController?.pushViewController(scr!, animated: true)
+    }
+
+    func goto_MH_Search_01_01_01_DaCoHoSo_Chitietcongty()
+    {
+        let scr = storyboard?.instantiateViewController(withIdentifier: "MH_Search_01_01_01_DaCoHoSo_Chitietcongty")
+        navigationController?.pushViewController(scr!, animated: true)
+    }
 }

@@ -36,13 +36,7 @@ class DangKy_ViewController: UIViewController,UIImagePickerControllerDelegate, U
     
     // lam viec voi image
     @objc func handleTap(_ sender: UITapGestureRecognizer){
-        //        let alert = UIAlertController(title: "image", message: "image change", preferredStyle: .alert)
-        //        let okAction = UIAlertAction(title: "OK", style: .default, handler: {Action in
-        //            self.avatar.image = UIImage(named: "motorcycle")
-        //        })
-        //        alert.addAction(okAction)
-        //        self.present(alert, animated: true, completion: nil)
-        
+ 
         let alert:UIAlertController = UIAlertController(title: "thong bao", message: "chon", preferredStyle: .alert)
         // tao ra 2 button
         let btphoto:UIAlertAction = UIAlertAction(title: "pho to", style: .default) { (UIAlertAction) in
@@ -192,14 +186,14 @@ class DangKy_ViewController: UIViewController,UIImagePickerControllerDelegate, U
                                         self.themnguoidung()
                                         if(nguoidung == 0)
                                         {
-                                            User_name = currenUser.email
+                                            User_name = currentUser_1.email
                                             User_flag = 1
                                              q = ""
                                             self.goto_MH_chucnang()
                                         }
                                         if(nguoidung == 1)
                                         {
-                                            User_name = currenUser.email
+                                            User_name = currentUser_2.email
                                             User_flag = 1
                                             q = ""
                                             print("di den man hinh cong ty .........\n")
@@ -247,33 +241,54 @@ class DangKy_ViewController: UIViewController,UIImagePickerControllerDelegate, U
             let uid = user.uid
             let email = user.email
             let photoURL = user.photoURL
-//            currenUser = User(id: uid, email: email!, linkAvatar: String("\(photoURL!)") , quyen: quyen!)
-            currenUser = User(id: uid, email: email!, linkAvatar: String("\(photoURL!)"))
-            var user_0 = ""
+
+            
             if(nguoidung == 0)
             {
-                user_0 = "Ungvien"
+                
+//                currenUser = User(id: uid, email: email!, linkAvatar: String("\(photoURL!)"))
+                currentUser_1 = User_1(id: uid, email: email!, linkAvatar: String("\(photoURL!)"), status_HS: 0)
+                let tableUser = ref.child("Nguoidung").child("Ungvien").child(currentUser_1.id).child("Thongtincanhan")
+                
+                let t1:Dictionary<String,String> = [
+                    "Email": currentUser_1.email,
+                    "LinkAvatar":currentUser_1.linkAvatar,
+                    "Hoso": String(currentUser_1!.status_HS)
+                ]
+                
+                tableUser.setValue(t1)
+                let url:URL = URL(string: currentUser_1.linkAvatar)!
+                do{
+                    let data:Data = try Data(contentsOf: url)
+                    currentUser_1.Avatar = UIImage(data: data)
+                }
+                catch{
+                    print("loi load hinh")
+                }
+                
             }else
             {
-                user_0 = "Congty"
+                
+                currentUser_2 = User(id: uid, email: email!, linkAvatar: String("\(photoURL!)"))
+                let tableUser = ref.child("Nguoidung").child("Congty").child(currentUser_2.id).child("Thongtincanhan")
+                
+                let t1:Dictionary<String,String> = [
+                    "Email": currentUser_2.email,
+                    "LinkAvatar":currentUser_2.linkAvatar                ]
+                
+                tableUser.setValue(t1)
+                let url:URL = URL(string: currentUser_2.linkAvatar)!
+                do{
+                    let data:Data = try Data(contentsOf: url)
+                    currentUser_2.Avatar = UIImage(data: data)
+                }
+                catch{
+                    print("loi load hinh")
+                }
             }
-            let tableUser = ref.child("Nguoidung").child("\(user_0)").child(currenUser.id).child("Thongtincanhan")
+
             
-            let t1:Dictionary<String,String> = [
-                "Email": currenUser.email,
-                "LinkAvatar":currenUser.linkAvatar
-            ]
-            
-            tableUser.setValue(t1)
-            
-            let url:URL = URL(string: currenUser.linkAvatar)!
-            do{
-                let data:Data = try Data(contentsOf: url)
-                currenUser.Avatar = UIImage(data: data)
-            }
-            catch{
-                print("loi load hinh")
-            }
+
         }
     }
 

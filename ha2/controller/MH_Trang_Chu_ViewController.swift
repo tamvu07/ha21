@@ -10,7 +10,8 @@ import UIKit
 var vistor:CongTy!
 var User_flag:Int!
 var User_name:String!
-var currenUser:User!
+var currentUser_1:User_1!
+var currentUser_2:User!
 import Firebase
 var Search_1_flag:Int!
 var tttk:Int!

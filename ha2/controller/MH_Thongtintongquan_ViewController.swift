@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class MH_Thongtintongquan_ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate,UITextFieldDelegate {
     
     @IBOutlet weak var txt_1: UITextField!
@@ -109,11 +110,61 @@ class MH_Thongtintongquan_ViewController: UIViewController,UIPickerViewDataSourc
         print("...txt_1....\(txt_8.text!).....\n")
         print("...txt_1....\(txt_9.text!).....\n")
 //        print("......user hien tai la :\(currenUser.email!).....\n")
+        // luu len firebase
+        
+        ///////////////
+        if(txt_1.text! == "" || txt_2.text! == "" || txt_3.text! == "" || txt_4.text! == "" || txt_5.text! == "" || txt_6.text! == "" || txt_7.text! == "" || txt_8.text! == "" || txt_9.text! == "" )
+        {
+            let alert  = UIAlertController(title: "Thông báo", message: "Bạn vui lòng nhập đủ thông tin !", preferredStyle: .alert)
+            let btn_ok:UIAlertAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alert.addAction(btn_ok)
+            present(alert, animated: true, completion: nil)
+        }else{
+            // luu du lieu len firebase
+            // ref.child de truy van table trong database , lay ra ID current USER hien tai
+            var tablename = ref.child("Nguoidung").child("Ungvien")
+            // Listen for new comments in the Firebase database
+            tablename.observe(.childAdded, with: { (snapshot) in
+                // nếu lấy được dữ liệu postDict từ sever về và id của user có trong postDict
+                if let postDict = snapshot.value as? [String : AnyObject], currentUser_1.id == snapshot.key
+                {
+                    var tablename2 = ref.child("Nguoidung").child("Ungvien").child("\(snapshot.key)").child("Thongtintongquan")
+                    let tt:Dictionary<String,String> = [
+                        "vitrimongmuon": self.txt_1.text!,
+                        "capbachientai": self.txt_2.text!,
+                        "capbacmongmuon": self.txt_3.text!,
+                        "nghanhnghemongmuon": self.txt_4.text!,
+                        "diadiemmongmuon":self.txt_5.text!,
+                        "trinhdohocvan": self.txt_6.text!,
+                        "sonamkinhnghiem": self.txt_7.text!,
+                        "hinhthuclamviec": self.txt_8.text!,
+                        "mucluongtoithieu": self.txt_9.text!
+                    ]
+                    
+                    tablename2.setValue(tt)
+                    let alert:UIAlertController = UIAlertController(title: "Đã lưu", message: "", preferredStyle: .alert)
+                    let bt:UIAlertAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    alert.addAction(bt)
+                    self.present(alert, animated: true, completion: nil)
+                    
+                }else{
+                    print("khong tim thay ung vien !")
+                }
+            })
+            
+            
+        }
+
+        tttq = 1
+        
+        
+        ////////////////
         
         let alert:UIAlertController = UIAlertController(title: "Đã lưu", message: "", preferredStyle: .alert)
         let bt:UIAlertAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alert.addAction(bt)
         self.present(alert, animated: true, completion: nil)
+        
     }
     
     

@@ -179,7 +179,7 @@ class MH_Thongtintaikhoan_ViewController: UIViewController, UIPickerViewDelegate
             // Listen for new comments in the Firebase database
             tablename.observe(.childAdded, with: { (snapshot) in
                 // nếu lấy được dữ liệu postDict từ sever về và id của user có trong postDict
-                if let postDict = snapshot.value as? [String : AnyObject], currenUser.id == snapshot.key
+                if let postDict = snapshot.value as? [String : AnyObject], currentUser_1.id == snapshot.key
                 {
                     var tablename2 = ref.child("Nguoidung").child("Ungvien").child("\(snapshot.key)").child("Thongtinlienhe")
                     let tt:Dictionary<String,String> = [
@@ -187,13 +187,14 @@ class MH_Thongtintaikhoan_ViewController: UIViewController, UIPickerViewDelegate
                         "Ngaysinh": self.txt_date.text!,
                         "Gioitinh": self.lb_gt,
                         "Honnhan": self.lb_hn,
-                        "Email":currenUser.email,
+                        "Email": currentUser_1.email,
                         "Điachi": self.txt_diachi.text!,
                         "SDT": "....",
                         "Thanhpho": self.text_TP.text!
                     ]
                     
                     tablename2.setValue(tt)
+                    tttk = 1
                     let alert:UIAlertController = UIAlertController(title: "Đã lưu", message: "", preferredStyle: .alert)
                     let bt:UIAlertAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                     alert.addAction(bt)
@@ -218,7 +219,7 @@ class MH_Thongtintaikhoan_ViewController: UIViewController, UIPickerViewDelegate
 //                    }
                 }else{
                     print("khong tim thay ung vien !")
-                    print(".....id 1:..\(currenUser.id)......id 2: \(snapshot.key)...")
+
                 }
             })
             
