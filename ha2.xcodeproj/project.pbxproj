@@ -36,6 +36,7 @@
 		18ED58E1227BDFCE007F86C9 /* CELL_Search_01_01_01TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED58E0227BDFCE007F86C9 /* CELL_Search_01_01_01TableViewCell.swift */; };
 		18EECA86228AD73700AAB597 /* MH_chucnang_CT_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EECA85228AD73700AAB597 /* MH_chucnang_CT_ViewController.swift */; };
 		18F88414228F991200F192DC /* get_ungvien.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F88413228F991200F192DC /* get_ungvien.swift */; };
+		18F88416228F9D2200F192DC /* nhap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F88415228F9D2200F192DC /* nhap.swift */; };
 		18FCDE36226090A9008A8552 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FCDE35226090A8008A8552 /* SWRevealViewController.m */; };
 		18FCDE382260958C008A8552 /* MH_Chuyen_Menu_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FCDE372260958C008A8552 /* MH_Chuyen_Menu_ViewController.swift */; };
 		18FD89532261722F000353B7 /* extension_function.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FD89522261722F000353B7 /* extension_function.swift */; };
@@ -74,6 +75,7 @@
 		18ED58E0227BDFCE007F86C9 /* CELL_Search_01_01_01TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CELL_Search_01_01_01TableViewCell.swift; sourceTree = "<group>"; };
 		18EECA85228AD73700AAB597 /* MH_chucnang_CT_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MH_chucnang_CT_ViewController.swift; sourceTree = "<group>"; };
 		18F88413228F991200F192DC /* get_ungvien.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = get_ungvien.swift; sourceTree = "<group>"; };
+		18F88415228F9D2200F192DC /* nhap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nhap.swift; sourceTree = "<group>"; };
 		18FCDE33226090A7008A8552 /* ha2-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ha2-Bridging-Header.h"; sourceTree = "<group>"; };
 		18FCDE34226090A8008A8552 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		18FCDE35226090A8008A8552 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				18E2A2FD22620018007638F6 /* CongTy.swift */,
 				18E7E1FF228EE5AA00CE8997 /* User_1.swift */,
 				18F88413228F991200F192DC /* get_ungvien.swift */,
+				18F88415228F9D2200F192DC /* nhap.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				1818F90E227C6B01009D0169 /* CELL2_Taohoso_TableViewCell.swift in Sources */,
 				1818F90A227C669A009D0169 /* MH_Taohoso_ViewController.swift in Sources */,
 				1845AE66225EE09E004C0B8E /* ViewController.swift in Sources */,
+				18F88416228F9D2200F192DC /* nhap.swift in Sources */,
 				18DEF3812260B7470058DB80 /* MH_Trang_Chu_ViewController.swift in Sources */,
 				18DA6871228861390019E23F /* MH_XemTruocHoSo_ViewController.swift in Sources */,
 				18EECA86228AD73700AAB597 /* MH_chucnang_CT_ViewController.swift in Sources */,
