@@ -140,8 +140,7 @@ extension MH_Taohoso_ViewController: UITableViewDataSource,UITableViewDelegate
             if(indexPath.row == 0)
             {
                 a.lb_1.text = "Thông tin tài khoản(bắt buộc)"
-                print("....da luu roi....\(tttk)...........\n")
-                if(currentUser_1.status_HS == 1)
+                if(currentUser_1.status_HS == 1 || tttk == 1)
                 {
                     var btnColor = UIButton(type: .custom)
                     
@@ -153,7 +152,7 @@ extension MH_Taohoso_ViewController: UITableViewDataSource,UITableViewDelegate
             }else  if(indexPath.row == 1)
             {
                 a.lb_1.text = "Thông tin tổng quát(bắt buộc)"
-                if(currentUser_1.status_HS == 1)
+                if(currentUser_1.status_HS == 1 || tttq == 1)
                 {
                     var btnColor = UIButton(type: .custom)
                     
@@ -172,7 +171,13 @@ extension MH_Taohoso_ViewController: UITableViewDataSource,UITableViewDelegate
            
         }else{
             let a = cell as! CELL2_Taohoso_TableViewCell
-            a.bt_lb.setTitle("Đăng Hồ Sơ", for: .normal )
+            if(currentUser_1.status_HS == 1)
+            {
+                a.bt_lb.setTitle("Hồ Sơ Đã Đ ng", for: .normal )
+            }else{
+                a.bt_lb.setTitle("Đăng Hồ Sơ", for: .normal )
+            }
+            
             a.bt_oulet_Xemtruoc.setTitle("Xem Trước Hồ Sơ", for: .normal)
             a.bt_oulet_Trangchu.setTitle("Trang Chủ", for: .normal)
         }
