@@ -76,6 +76,12 @@ class MH_Search_01_01_01_DaCoHoSo_Chitietcongty_ViewController: UIViewController
         }
     }
 
+    @IBAction func bt_trangchu(_ sender: Any) {
+        let scr = storyboard?.instantiateViewController(withIdentifier: "MH_chucnang")
+        let m = navigationController?.viewControllers[1]
+        navigationController?.popToViewController(m!, animated: true)
+    }
+    
 
 
 }

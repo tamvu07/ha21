@@ -96,6 +96,13 @@ class MH_Taohoso_ViewController: UIViewController {
         navigationController?.pushViewController(scr!, animated: true)
     }
     
+    @IBAction func bt_trangchu(_ sender: Any) {
+        let scr = storyboard?.instantiateViewController(withIdentifier: "MH_chucnang")
+        let m = navigationController?.viewControllers[1]
+        navigationController?.popToViewController(m!, animated: true)
+    }
+
+    
 }
 
 extension MH_Taohoso_ViewController: UITableViewDataSource,UITableViewDelegate
@@ -173,7 +180,7 @@ extension MH_Taohoso_ViewController: UITableViewDataSource,UITableViewDelegate
             let a = cell as! CELL2_Taohoso_TableViewCell
             if(currentUser_1.status_HS == 1)
             {
-                a.bt_lb.setTitle("Hồ Sơ Đã Đ ng", for: .normal )
+                a.bt_lb.setTitle("Hồ Sơ Đã Đăng", for: .normal )
             }else{
                 a.bt_lb.setTitle("Đăng Hồ Sơ", for: .normal )
             }
