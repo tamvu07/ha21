@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1804A2392266341600A8F0B8 /* MH_ChiTiet_CongTy_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804A2382266341600A8F0B8 /* MH_ChiTiet_CongTy_ViewController.swift */; };
+		180CE0252291B33A006D459C /* Cell_MH_HoSoUngTuyen_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180CE0232291B33A006D459C /* Cell_MH_HoSoUngTuyen_TableViewCell.swift */; };
+		180CE0262291B33A006D459C /* Cell_MH_HoSoUngTuyen_TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 180CE0242291B33A006D459C /* Cell_MH_HoSoUngTuyen_TableViewCell.xib */; };
 		1818F908227C35BA009D0169 /* MH_Search_01_01_01_Chitietcongty_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1818F907227C35BA009D0169 /* MH_Search_01_01_01_Chitietcongty_ViewController.swift */; };
 		1818F90A227C669A009D0169 /* MH_Taohoso_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1818F909227C669A009D0169 /* MH_Taohoso_ViewController.swift */; };
 		1818F90C227C6879009D0169 /* CELL1_Taohoso_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1818F90B227C6879009D0169 /* CELL1_Taohoso_TableViewCell.swift */; };
@@ -49,6 +51,8 @@
 
 /* Begin PBXFileReference section */
 		1804A2382266341600A8F0B8 /* MH_ChiTiet_CongTy_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MH_ChiTiet_CongTy_ViewController.swift; sourceTree = "<group>"; };
+		180CE0232291B33A006D459C /* Cell_MH_HoSoUngTuyen_TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell_MH_HoSoUngTuyen_TableViewCell.swift; sourceTree = "<group>"; };
+		180CE0242291B33A006D459C /* Cell_MH_HoSoUngTuyen_TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Cell_MH_HoSoUngTuyen_TableViewCell.xib; sourceTree = "<group>"; };
 		1818F907227C35BA009D0169 /* MH_Search_01_01_01_Chitietcongty_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MH_Search_01_01_01_Chitietcongty_ViewController.swift; sourceTree = "<group>"; };
 		1818F909227C669A009D0169 /* MH_Taohoso_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MH_Taohoso_ViewController.swift; sourceTree = "<group>"; };
 		1818F90B227C6879009D0169 /* CELL1_Taohoso_TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CELL1_Taohoso_TableViewCell.swift; sourceTree = "<group>"; };
@@ -106,6 +110,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		180CE01F2291B0E4006D459C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				180CE0232291B33A006D459C /* Cell_MH_HoSoUngTuyen_TableViewCell.swift */,
+				180CE0242291B33A006D459C /* Cell_MH_HoSoUngTuyen_TableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		1845AE57225EE09E004C0B8E = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +235,7 @@
 		18EECA84228AD70A00AAB597 /* congty */ = {
 			isa = PBXGroup;
 			children = (
+				180CE01F2291B0E4006D459C /* Cell */,
 				18EECA85228AD73700AAB597 /* MH_chucnang_CT_ViewController.swift */,
 			);
 			path = congty;
@@ -307,6 +321,7 @@
 			files = (
 				1845AE6E225EE0A0004C0B8E /* LaunchScreen.storyboard in Resources */,
 				1845AE7A225EE259004C0B8E /* GoogleService-Info.plist in Resources */,
+				180CE0262291B33A006D459C /* Cell_MH_HoSoUngTuyen_TableViewCell.xib in Resources */,
 				1845AE6B225EE0A0004C0B8E /* Assets.xcassets in Resources */,
 				1845AE69225EE09E004C0B8E /* Main.storyboard in Resources */,
 			);
@@ -392,6 +407,7 @@
 				18908B5C228FEE55009DD6CB /* Thongtintongquan.swift in Sources */,
 				18FCDE36226090A9008A8552 /* SWRevealViewController.m in Sources */,
 				182EDC65227AEDFB00D3BF57 /* MH_Search_01_01_ViewController.swift in Sources */,
+				180CE0252291B33A006D459C /* Cell_MH_HoSoUngTuyen_TableViewCell.swift in Sources */,
 				18908B58228FEC6C009DD6CB /* Thongtincanhan.swift in Sources */,
 				1830E3422290E713001B34B8 /* MH_nopHoSo_thanhcong_ViewController.swift in Sources */,
 				18908B5E228FF495009DD6CB /* UngVien_New.swift in Sources */,
