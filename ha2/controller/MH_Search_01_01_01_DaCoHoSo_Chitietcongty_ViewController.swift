@@ -77,11 +77,19 @@ class MH_Search_01_01_01_DaCoHoSo_Chitietcongty_ViewController: UIViewController
     }
 
     @IBAction func bt_trangchu(_ sender: Any) {
-        let scr = storyboard?.instantiateViewController(withIdentifier: "MH_chucnang")
+
         let m = navigationController?.viewControllers[1]
         navigationController?.popToViewController(m!, animated: true)
     }
     
-
-
+    @IBAction func bt_nopHoSo(_ sender: Any) {
+                let scr = storyboard?.instantiateViewController(withIdentifier: "MH_nopHoSo_thanhcong")
+        self.navigationController?.pushViewController(scr!, animated: true)
+    }
+    
+    @IBAction func bt_quanLyHoSo(_ sender: Any) {
+        let scr = storyboard?.instantiateViewController(withIdentifier: "MH_Taohoso")
+        self.navigationController?.pushViewController(scr!, animated: true)
+    }
+    
 }

@@ -81,7 +81,7 @@ class MH_XemTruocHoSo_ViewController: UIViewController {
                 self.lb_luongtoithieu.text = mucluongtoithieu
                 self.lb_hinhthucLV.text = nganhnghemongmuon
                 self.lb_TDCnhat.text = trinhdovanhoa
-
+                self.lb_nganhngheMM.text = nganhnghemongmuon
                 
             }else{
                 print("khong co du lieu!")

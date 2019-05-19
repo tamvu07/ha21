@@ -17,6 +17,7 @@
 		182608BE2285C98F001C349F /* MH_Search_01_01_01_DaCoHoSo_Chitietcongty_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182608BD2285C98F001C349F /* MH_Search_01_01_01_DaCoHoSo_Chitietcongty_ViewController.swift */; };
 		182EDC65227AEDFB00D3BF57 /* MH_Search_01_01_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182EDC64227AEDFB00D3BF57 /* MH_Search_01_01_ViewController.swift */; };
 		182EDC67227AF55500D3BF57 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182EDC66227AF55500D3BF57 /* Constant.swift */; };
+		1830E3422290E713001B34B8 /* MH_nopHoSo_thanhcong_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1830E3412290E713001B34B8 /* MH_nopHoSo_thanhcong_ViewController.swift */; };
 		18337E3C227FD05100AEA1FC /* MH_Thongtintaikhoan_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18337E3B227FD05100AEA1FC /* MH_Thongtintaikhoan_ViewController.swift */; };
 		1845AE64225EE09E004C0B8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1845AE63225EE09E004C0B8E /* AppDelegate.swift */; };
 		1845AE66225EE09E004C0B8E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1845AE65225EE09E004C0B8E /* ViewController.swift */; };
@@ -57,6 +58,7 @@
 		182608BD2285C98F001C349F /* MH_Search_01_01_01_DaCoHoSo_Chitietcongty_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MH_Search_01_01_01_DaCoHoSo_Chitietcongty_ViewController.swift; sourceTree = "<group>"; };
 		182EDC64227AEDFB00D3BF57 /* MH_Search_01_01_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MH_Search_01_01_ViewController.swift; sourceTree = "<group>"; };
 		182EDC66227AF55500D3BF57 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		1830E3412290E713001B34B8 /* MH_nopHoSo_thanhcong_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MH_nopHoSo_thanhcong_ViewController.swift; sourceTree = "<group>"; };
 		18337E3B227FD05100AEA1FC /* MH_Thongtintaikhoan_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MH_Thongtintaikhoan_ViewController.swift; sourceTree = "<group>"; };
 		1845AE60225EE09E004C0B8E /* ha2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ha2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1845AE63225EE09E004C0B8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				1897D9B52282761900E3F4EF /* MH_Thongtintongquan_ViewController.swift */,
 				182608BD2285C98F001C349F /* MH_Search_01_01_01_DaCoHoSo_Chitietcongty_ViewController.swift */,
 				18DA6870228861390019E23F /* MH_XemTruocHoSo_ViewController.swift */,
+				1830E3412290E713001B34B8 /* MH_nopHoSo_thanhcong_ViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 				18FCDE36226090A9008A8552 /* SWRevealViewController.m in Sources */,
 				182EDC65227AEDFB00D3BF57 /* MH_Search_01_01_ViewController.swift in Sources */,
 				18908B58228FEC6C009DD6CB /* Thongtincanhan.swift in Sources */,
+				1830E3422290E713001B34B8 /* MH_nopHoSo_thanhcong_ViewController.swift in Sources */,
 				18908B5E228FF495009DD6CB /* UngVien_New.swift in Sources */,
 				18E2A30022620EF2007638F6 /* CELLS_Trang_Chu_TableViewCell.swift in Sources */,
 				18232C90227B499700D9639A /* MH_Search_01_01_01ViewController.swift in Sources */,
