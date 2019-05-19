@@ -27,6 +27,8 @@ class MH_Thongtintongquan_ViewController: UIViewController,UIPickerViewDataSourc
     @IBOutlet weak var picker_6: UIPickerView!
     @IBOutlet weak var picker_7: UIPickerView!
     @IBOutlet weak var picker_8: UIPickerView!
+    var currentUser: UngVien_New = UngVien_New.init(userID: "", Thongtincanhan: Thongtincanhan.init(email: currentUser_1.email, linkAvatar: currentUser_1.linkAvatar, hoso: currentUser_1.status_HS), Thongtinlienhe: Thongtinlienhe.init(email: "", gioitinh: "", honnhan: "", hoten: "", ngaysinh: "", sdt: "", thanhpho: "", diachi: ""), Thongtintongquan: Thongtintongquan.init(capbachientai: "", capbacmongmuon: "", diadiemmongmuon: "", hinhthuclamviec: "", mucluongtoithieu: "", nghanhnghemongmuon: "", sonamkinhnghiem: "", trinhdohocvan: "", vitrimongmuon: ""))
+    
     
     
     let mangtong:Array<Array<String>> = [
@@ -96,6 +98,53 @@ class MH_Thongtintongquan_ViewController: UIViewController,UIPickerViewDataSourc
 //        addright_image(txtField: txt_9)
 //        add_close(picker_0: picker_2)
         picker_2.reloadInputViews()
+        
+        var tablename = ref.child("Nguoidung").child("Ungvien")
+        // Listen for new comments in the Firebase database
+        tablename.observe(.childAdded, with: { (snapshot) in
+            // nếu lấy được dữ liệu postDict từ sever về và id của user có trong postDict
+            
+            if let postDict = snapshot.value as? [String : AnyObject], currentUser_1.id == snapshot.key
+            {
+                
+                // lay thong tin ve cho thong tin tong quan
+                let User_current2 = (postDict["Thongtincanhan"]) as! NSMutableDictionary
+                let HS:String = (User_current2["Hoso"])! as? String ?? "0"
+                let hs  = Int(HS)
+                if(hs == 1)
+                {
+                    self.get_data_thongtintongquan()
+                }
+                
+            }else{
+                print("khong co du lieu!")
+            }
+            
+        })
+        
+        
+    }
+    
+    func get_data_thongtintongquan() {
+        
+        get_ungvien.shared.fetchData(tableName: ref.child("Nguoidung/Ungvien"), currentUserId: currentUser_1.id) { (UngVien_New, err) in
+            if err != "" {
+                print(err)
+            }
+            else {
+                self.currentUser = UngVien_New
+                self.txt_1.text = self.currentUser.Thongtintongquan?.vitrimongmuon
+                self.txt_2.text = self.currentUser.Thongtintongquan?.capbachientai
+                self.txt_3.text = self.currentUser.Thongtintongquan?.capbacmongmuon
+                self.txt_4.text = self.currentUser.Thongtintongquan?.nghanhnghemongmuon
+                self.txt_5.text = self.currentUser.Thongtintongquan?.diadiemmongmuon
+                self.txt_6.text = self.currentUser.Thongtintongquan?.trinhdohocvan
+                self.txt_7.text = self.currentUser.Thongtintongquan?.sonamkinhnghiem
+                self.txt_8.text = self.currentUser.Thongtintongquan?.hinhthuclamviec
+                self.txt_9.text = self.currentUser.Thongtintongquan?.mucluongtoithieu
+            }
+        }
+        
         
     }
     

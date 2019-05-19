@@ -18,8 +18,18 @@ class MH_Thongtintaikhoan_ViewController: UIViewController, UIPickerViewDelegate
     @IBOutlet weak var text_TP: UITextField!
     @IBOutlet weak var txt_hoten: UITextField!
     @IBOutlet weak var txt_diachi: UITextField!
+    @IBOutlet weak var bt_nam: DLRadioButton!
+    @IBOutlet weak var bt_nu: DLRadioButton!
+    @IBOutlet weak var bt_daLapgiaDinh: DLRadioButton!
+    @IBOutlet weak var bt_docthan: DLRadioButton!
+    
+    
+    
     var lb_gt = ""
     var lb_hn = ""
+    
+        var currentUser: UngVien_New = UngVien_New.init(userID: "", Thongtincanhan: Thongtincanhan.init(email: currentUser_1.email, linkAvatar: currentUser_1.linkAvatar, hoso: currentUser_1.status_HS), Thongtinlienhe: Thongtinlienhe.init(email: "", gioitinh: "", honnhan: "", hoten: "", ngaysinh: "", sdt: "", thanhpho: "", diachi: ""), Thongtintongquan: Thongtintongquan.init(capbachientai: "", capbacmongmuon: "", diadiemmongmuon: "", hinhthuclamviec: "", mucluongtoithieu: "", nghanhnghemongmuon: "", sonamkinhnghiem: "", trinhdohocvan: "", vitrimongmuon: ""))
+    
     
     let arr_TP = [
         "An Giang",
@@ -78,8 +88,68 @@ class MH_Thongtintaikhoan_ViewController: UIViewController, UIPickerViewDelegate
         view.addGestureRecognizer(tapGesture)
         txt_date.inputView = datePicker
         
+                var tablename = ref.child("Nguoidung").child("Ungvien")
+                // Listen for new comments in the Firebase database
+                tablename.observe(.childAdded, with: { (snapshot) in
+                    // nếu lấy được dữ liệu postDict từ sever về và id của user có trong postDict
+
+                    if let postDict = snapshot.value as? [String : AnyObject], currentUser_1.id == snapshot.key
+                    {
+        
+                        // lay thong tin ve cho thong tin tong quan
+                        let User_current2 = (postDict["Thongtincanhan"]) as! NSMutableDictionary
+                        let HS:String = (User_current2["Hoso"])! as? String ?? "0"
+                        let hs  = Int(HS)
+                        if(hs == 1)
+                        {
+                            self.get_data_thongtinlienhe()
+                        }
+        
+                    }else{
+                        print("khong co du lieu!")
+                    }
+        
+                })
+        
     }
     
+    func get_data_thongtinlienhe() {
+        
+        get_ungvien.shared.fetchData(tableName: ref.child("Nguoidung/Ungvien"), currentUserId: currentUser_1.id) { (UngVien_New, err) in
+            if err != "" {
+                print(err)
+            }
+            else {
+                self.currentUser = UngVien_New
+                self.txt_hoten.text = self.currentUser.Thongtinlienhe?.hoten
+                self.txt_date.text = self.currentUser.Thongtinlienhe?.ngaysinh
+                let gioitinh = self.currentUser.Thongtinlienhe?.gioitinh
+                let honnhan = self.currentUser.Thongtinlienhe?.honnhan
+                self.txt_diachi.text = self.currentUser.Thongtinlienhe?.diachi
+                self.text_TP.text = self.currentUser.Thongtinlienhe?.thanhpho
+                if(gioitinh == "Nam")
+                {
+                    self.bt_nam.isSelected = true
+                    self.lb_gt = "Nam"
+                }else{
+                    self.bt_nu.isSelected = true
+                    self.lb_gt = "Nữ"
+                }
+               
+                if(honnhan == "Đã lập gia đình")
+                {
+                    self.bt_daLapgiaDinh.isSelected = true
+                    self.lb_hn = "Đã lập gia đình"
+                }else{
+                    self.bt_docthan.isSelected = true
+                    self.lb_hn = "Độc thân"
+                }
+
+            }
+        }
+        
+        
+    }
     
     override func viewWillDisappear(_ animated: Bool) {
         lb_gt = ""

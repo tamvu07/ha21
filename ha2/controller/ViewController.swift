@@ -48,10 +48,10 @@ class ViewController: UIViewController {
                     print("....... dang nhap thanh cong ............")
                 let user = Auth.auth().currentUser
                 let avatar: String = user?.photoURL?.absoluteString ?? ""
-                var KT = "Ungvien"
+               
                 // lay du lieu ve tu firebase
                 // ref.child de truy van table trong database , lay ra ID current USER hien tai
-                var tablename = ref.child("Nguoidung").child("\(KT)")
+                var tablename = ref.child("Nguoidung").child("Ungvien")
                 // Listen for new comments in the Firebase database
                 tablename.observe(.childAdded, with: { (snapshot) in
                     // nếu lấy được dữ liệu postDict từ sever về và id của user có trong postDict
@@ -66,19 +66,19 @@ class ViewController: UIViewController {
                         currentUser_1 = User_1.init(id: (user?.uid)!, email: (user?.email)!, linkAvatar: avatar, status_HS: status_HS)
                                          User_flag = 1
                                         User_name = currentUser_1.email
-                        self!.goto_MH_chucnang()
+                        self?.goto_MH_chucnang()
                     }
                     else {
 //                        print("KHONG CO POSTDICT HOAC ID USER KHONG CO TRONG TABLE USER1")
-                        KT = "Congty"
-                       var  tablename2 = ref.child("Nguoidung").child("\(KT)")
+                       var  tablename2 = ref.child("Nguoidung").child("Congty")
                         tablename2.observe(.childAdded, with: { (snapshot) in
                         if let postDict = snapshot.value as? [String : AnyObject], (user?.uid)! == snapshot.key
                         {
                             currentUser_2 = User.init(id: (user?.uid)!, email: (user?.email)!, linkAvatar: avatar)
                             User_flag = 1
                             User_name = currentUser_2.email
-                            self!.goto_MH_chucnang_CT()
+                            print("ok 1.........\n")
+                            self?.goto_MH_chucnang_CT()
                         }
 //                        else {
 //                            let alert:UIAlertController = UIAlertController(title: "Bạn phải đăng ký trươc khi đăng nhập !!", message: "", preferredStyle: .alert)
