@@ -32,6 +32,7 @@ class DangKy_ViewController: UIViewController,UIImagePickerControllerDelegate, U
         self.avatar.addGestureRecognizer(TapGesture)
         // khi moi vao co anh tu may luon
         imgdata = UIImage(named: "person")!.pngData()
+        txt_pass.resignFirstResponder()
     }
     
     // lam viec voi image
