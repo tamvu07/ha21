@@ -270,65 +270,11 @@ class MH_Thongtintaikhoan_ViewController: UIViewController, UIPickerViewDelegate
                     alert.addAction(bt)
                     self.present(alert, animated: true, completion: nil)
                     
-//                    let User_current = (postDict["Thongtincanhan"]) as! NSMutableDictionary
-//                    let email:String = (User_current["Email"])! as? String ?? "taolao@gmail.com"
-//                    let quyen:String = (User_current["Quyen"])! as? String ?? "taolao"
-//                    let linkAvatar:String = (User_current["LinkAvatar"])! as? String ?? "taolao"
-//
-//                    let user:User = User(id: snapshot.key, email: email, linkAvatar: linkAvatar, quyen: Int(quyen)!)
-//                    currenUser = user
-//
-//                    if(Int(currenUser.quyen) == 1)
-//                    {
-//                        print("---------------- Chuyen man hinh cho user voi quyen la 1 ---------------")
-//                        self?.goto_Screen_Main_khach_hang()
-//                        return
-//                    }
-//                    else {
-//
-//                    }
                 }else{
                     print("khong tim thay ung vien !")
-
                 }
             })
-            
-            
-            
-
         }
-//        print("...ten....\(txt_hoten.text!).....\n")
-//        print("....ngay...\(txt_date.text!).....\n")
-//        print("....dia chi...\(txt_diachi.text!).....\n")
-//        print("....TP...\(text_TP.text!).....\n")
-//        print(".....hon nhan la :..\(self.lb_hn).....\n")
-//        print(".....gioi tinh la :..\(self.lb_gt).....\n")
-//        print("......user hien tai la :\(currenUser.email!).....\n")
-        
-
-        
         tttk = 1
-        print("....vua bam 1:.\(tttk).....\n")
-        
-//        print("............current ủe la :\(currenUser.email)....\n")
-        // dua du lieu len database
-//        let tablename = ref.child("Thong Tin User")
-//        let congtys = tablename.child("Thong Tin")
-//        // khoi tao 1 user de up len fire base
-//        let ct:Dictionary<String,String> = ["ten cong ty":"phat dat",
-//                                            "cong viec":"công nghệ thực phẩm",
-//                                            "dia chi":"123/123 duong so 2",
-//                                            "avatar":"https://newimageasia.vn/image/catalog/newimage/Home3-091.png",
-//                                            "luong":"1000 $",
-//                                            "motacongviec":"làm việc toàn thời gian, độ tuổi: lớn hơn 17 nhỏ hơn 31, siêng năng, có tinh thần học hỏi, biết tiếng anh. ",
-//                                            "email":"phatdai@gmail.com",
-//                                            "sdt":"0956211155"
-//
-//        ]
-//        congtys.setValue(ct)
     }
-    
-    
-    
-    
 }

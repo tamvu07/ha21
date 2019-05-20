@@ -100,7 +100,7 @@ class MH_Trang_Chu_ViewController: UIViewController, UITableViewDelegate,UITable
                 let sdt:String = (postDict?["sdt"])! as! String
                 
 //                let congty:CongTy =  CongTy(idCT: snapshot.key, tencongty: tencongty, congviec: congviec, diachi: diachi,
-                let congty:CongTy = CongTy(idCT: snapshot.key, tencongty: tencongty, congviec: congviec, diachi: diachi, avatar: avatar, luong: luong, motacongviec: motacongviec, email: email, sdt: sdt)
+                let congty:CongTy = CongTy(idCT: snapshot.key, tencongty: tencongty, congviec: congviec, diachi: diachi, avatar: avatar, luong: luong, motacongviec: motacongviec, email: email, sdt: sdt, nghanh: "")
                 self.array_congty.append(congty)
                 print("........>>>>>>>>>>>>\(self.array_congty.count).................")
                  self.tb_List_CongTy.reloadData()

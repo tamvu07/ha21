@@ -20,36 +20,66 @@ class MH_Search_01_01_01ViewController: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        // Do any additional setup after loading the view.
-        
-        
-        let tablename = ref.child("cong ty ung tuyen")
+        let tablename = ref.child("Nguoidung").child("Congty")
         tablename.observe(.childAdded, with: { (snapshot) in
-        // lay du lieu luu vao postDict
-        let postDict = snapshot.value as? [String: AnyObject]
-        if(postDict != nil)
-        {
-            //                print("................\(postDict)...................")
-            let tencongty:String = (postDict?["ten cong ty"])! as! String
-            let congviec:String = (postDict?["cong viec"])! as! String
-            let diachi:String = (postDict?["dia chi"])! as! String
-            let avatar:String = (postDict?["avatar"])! as! String
-            let luong:String = (postDict?["luong"])! as! String
-            let motacongviec:String = (postDict?["motacongviec"])! as! String
-            let email:String = (postDict?["email"])! as! String
-            let sdt:String = (postDict?["sdt"])! as! String
+            // nếu lấy được dữ liệu postDict từ sever về và id của user có trong postDict
+           let postDict = snapshot.value as? [String : AnyObject]
+            if(postDict != nil){
+            // lay ra thong tin cua cong ty
+            let User_current_2 = (postDict!["Thongtincanhan"]) as! NSMutableDictionary
+                let email:String = (User_current_2["Email"])! as? String ?? "000@gmail.com"
+                let linkAvatar:String = (User_current_2["LinkAvatar"])! as? String ?? "000"
+                let diachi:String = (User_current_2["Diachi"])! as? String ?? "..."
+                let sdt:String = (User_current_2["SDT"])! as? String ?? "..."
+                let tenCT:String = (User_current_2["TenCT"])! as? String ?? "..."
             
-            //                let congty:CongTy =  CongTy(idCT: snapshot.key, tencongty: tencongty, congviec: congviec, diachi: diachi,
-            let congty:CongTy = CongTy(idCT: snapshot.key, tencongty: tencongty, congviec: congviec, diachi: diachi, avatar: avatar, luong: luong, motacongviec: motacongviec, email: email, sdt: sdt)
-            if(congviec == JOB)
-            {
-                self.array_congty.append(congty)
-            }
+            // lay ra thong tin tuyen dung tu cong ty
+            let Thongtin_tuyen = (postDict!["Thongtintuyendung"]) as! NSMutableDictionary
+            let luong:String = (Thongtin_tuyen["Luong"])! as? String ?? "00$"
+            let motachung:String = (Thongtin_tuyen["Motachung"])! as? String ?? ".."
+            let nghanh:String = (Thongtin_tuyen["Nganh"])! as? String ?? "..."
+            let soluongHS:String = (Thongtin_tuyen["SoluongHS"])! as? String ?? "..."
+            let vitrituyen:String = (Thongtin_tuyen["Vitrituyen"])! as? String ?? "..."
             
-            print("........>>>>>>>>>>>>\(self.array_congty.count).................")
+            
+            let congty:CongTy = CongTy(idCT: snapshot.key, tencongty: tenCT, congviec: vitrituyen, diachi: diachi, avatar: linkAvatar, luong: luong, motacongviec: motachung, email: email, sdt: sdt, nghanh: nghanh)
+            
+                        if(vitrituyen == JOB)
+                        {
+                            self.array_congty.append(congty)
+                        }
             self.tableView.reloadData()
         }
-    })
+
+        })
+        
+//        let tablename = ref.child("cong ty ung tuyen")
+//        tablename.observe(.childAdded, with: { (snapshot) in
+//        // lay du lieu luu vao postDict
+//        let postDict = snapshot.value as? [String: AnyObject]
+//        if(postDict != nil)
+//        {
+//            //                print("................\(postDict)...................")
+//            let tencongty:String = (postDict?["ten cong ty"])! as! String
+//            let congviec:String = (postDict?["cong viec"])! as! String
+//            let diachi:String = (postDict?["dia chi"])! as! String
+//            let avatar:String = (postDict?["avatar"])! as! String
+//            let luong:String = (postDict?["luong"])! as! String
+//            let motacongviec:String = (postDict?["motacongviec"])! as! String
+//            let email:String = (postDict?["email"])! as! String
+//            let sdt:String = (postDict?["sdt"])! as! String
+//
+//            //                let congty:CongTy =  CongTy(idCT: snapshot.key, tencongty: tencongty, congviec: congviec, diachi: diachi,
+//            let congty:CongTy = CongTy(idCT: snapshot.key, tencongty: tencongty, congviec: congviec, diachi: diachi, avatar: avatar, luong: luong, motacongviec: motacongviec, email: email, sdt: sdt)
+//            if(congviec == JOB)
+//            {
+//                self.array_congty.append(congty)
+//            }
+//
+//            print("........>>>>>>>>>>>>\(self.array_congty.count).................")
+//            self.tableView.reloadData()
+//        }
+//    })
         
     }
     

@@ -83,6 +83,30 @@ class MH_Search_01_01_01_DaCoHoSo_Chitietcongty_ViewController: UIViewController
     }
     
     @IBAction func bt_nopHoSo(_ sender: Any) {
+        
+        /////
+        var tablename = ref.child("Nguoidung").child("Congty")
+        // Listen for new comments in the Firebase database
+        tablename.observe(.childAdded, with: { (snapshot) in
+            // nếu lấy được dữ liệu postDict từ sever về và id của user có trong postDict
+            if let postDict = snapshot.value as? [String : AnyObject], vistor.idCT == snapshot.key
+            {
+                var tablename2 = self.ref.child("Nguoidung").child("Congty").child("\(snapshot.key)").child("Hosoungtuyen").childByAutoId()
+                let tt:Dictionary<String,String> = [
+                    "ID_Hoso_Ungven": currentUser_1.id,
+                    "Nganh": vistor.nghanh,
+                    "Vitrituyen": vistor.congviec
+                ]
+                tablename2.setValue(tt)
+                let alert:UIAlertController = UIAlertController(title: "Đã nộp đơn, xin bạn chờ phản hồi từ công ty.", message: "", preferredStyle: .alert)
+                let bt:UIAlertAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                alert.addAction(bt)
+                self.present(alert, animated: true, completion: nil)
+                
+            }else{
+                print("khong tim thay ung vien !")
+            }
+        })
                 let scr = storyboard?.instantiateViewController(withIdentifier: "MH_nopHoSo_thanhcong")
         self.navigationController?.pushViewController(scr!, animated: true)
     }
