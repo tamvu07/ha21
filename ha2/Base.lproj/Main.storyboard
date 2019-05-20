@@ -2763,10 +2763,10 @@
             </objects>
             <point key="canvasLocation" x="-1378.4000000000001" y="-51.724137931034484"/>
         </scene>
-        <!--View Controller-->
+        <!--Ho So Ung Vien View Controller-->
         <scene sceneID="kug-CV-ihY">
             <objects>
-                <viewController id="NnU-Pg-ROQ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MH_DS_HoSoUngVien" id="NnU-Pg-ROQ" customClass="MH_DS_HoSoUngVien_ViewController" customModule="ha2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KpP-WP-CcO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2774,6 +2774,10 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6hk-Qn-7S8">
                                 <rect key="frame" x="0.0" y="74" width="375" height="549"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="NnU-Pg-ROQ" id="ojK-qY-MAT"/>
+                                    <outlet property="delegate" destination="NnU-Pg-ROQ" id="IgX-Lw-DlJ"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2786,6 +2790,9 @@
                         <viewLayoutGuide key="safeArea" id="6ec-An-NYs"/>
                     </view>
                     <navigationItem key="navigationItem" id="BFm-tA-Emm"/>
+                    <connections>
+                        <outlet property="tableView" destination="6hk-Qn-7S8" id="Ku2-bm-4xy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I5z-r6-ZtY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

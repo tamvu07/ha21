@@ -10,6 +10,11 @@ import UIKit
 
 class Cell_MH_HoSoUngTuyen_TableViewCell: UITableViewCell {
 
+    @IBOutlet weak var avatar_1: UIImageView!
+    @IBOutlet weak var lb_hoten: UILabel!
+    @IBOutlet weak var lb_vitrituyen: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

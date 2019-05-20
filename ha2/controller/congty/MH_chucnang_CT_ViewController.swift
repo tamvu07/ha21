@@ -91,7 +91,18 @@ class MH_chucnang_CT_ViewController: UIViewController, UITableViewDataSource,UIT
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // lay vi tri dong duoc chon
+        if(indexPath.row == 0)
+        {
+            
+        }
+        if(indexPath.row == 1)
+        {
+            self.chuyen_MH_DS_HoSoUngVien() 
+        }
+        if(indexPath.row == 2)
+        {
+            
+        }
 
     }
     
@@ -101,5 +112,10 @@ class MH_chucnang_CT_ViewController: UIViewController, UITableViewDataSource,UIT
         
     }
 
+    func chuyen_MH_DS_HoSoUngVien() {
+        let scr = storyboard?.instantiateViewController(withIdentifier: "MH_DS_HoSoUngVien")
+        navigationController?.pushViewController(scr!, animated: true)
+        
+    }
     
 }
