@@ -100,7 +100,11 @@ class ViewController: UIViewController {
                         let User_current_2 = (postDict["Thongtincanhan"]) as! NSMutableDictionary
                         let email:String = (User_current_2["Email"])! as? String ?? "000@gmail.com"
                         let linkAvatar:String = (User_current_2["LinkAvatar"])! as? String ?? "000"
-                        currentUser_2 = User.init(id: (user?.uid)!, email: (user?.email)!, linkAvatar: avatar)
+                        let diachi:String = (User_current_2["Diachi"])! as? String ?? "..."
+                        let sdt:String = (User_current_2["SDT"])! as? String ?? "..."
+                        let tenCT:String = (User_current_2["TenCT"])! as? String ?? "..."
+//                        currentUser_2 = User.init(id: (user?.uid)!, email: (user?.email)!, linkAvatar: avatar)
+                         currentUser_2 = User.init(id: (user?.uid)!, email: (user?.email)!, linkAvatar: avatar, diachi: diachi, sdt: sdt, tenCT: tenCT)
                             User_flag = 1
                             User_name = currentUser_2.email
                             self?.goto_MH_chucnang_CT()

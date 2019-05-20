@@ -18,6 +18,7 @@ struct CongTy {
     let motacongviec:String!
     let email:String!
     let sdt:String!
+    let nghanh:String
     
     init()
     {
@@ -30,9 +31,10 @@ struct CongTy {
         motacongviec = ""
         email = ""
         sdt = ""
+        nghanh = ""
     }
     
-    init(idCT:String,tencongty:String,congviec:String,diachi:String,avatar:String, luong:String, motacongviec:String,email:String,sdt:String) {
+    init(idCT:String,tencongty:String,congviec:String,diachi:String,avatar:String, luong:String, motacongviec:String,email:String,sdt:String, nghanh:String) {
         self.idCT = idCT
         self.tencongty = tencongty
         self.congviec = congviec
@@ -42,6 +44,7 @@ struct CongTy {
         self.motacongviec = motacongviec
         self.email = email
         self.sdt = sdt
+        self.nghanh = nghanh
     }
     
 }

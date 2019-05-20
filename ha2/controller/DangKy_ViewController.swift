@@ -270,12 +270,16 @@ class DangKy_ViewController: UIViewController,UIImagePickerControllerDelegate, U
             }else
             {
                 
-                currentUser_2 = User(id: uid, email: email!, linkAvatar: String("\(photoURL!)"))
+//                currentUser_2 = User(id: uid, email: email!, linkAvatar: String("\(photoURL!)"))
+                currentUser_2 = User(id: uid, email: email!, linkAvatar: String("\(photoURL!)"), diachi: "", sdt: "", tenCT: "")
                 let tableUser = ref.child("Nguoidung").child("Congty").child(currentUser_2.id).child("Thongtincanhan")
                 
                 let t1:Dictionary<String,String> = [
                     "Email": currentUser_2.email,
-                    "LinkAvatar":currentUser_2.linkAvatar                ]
+                    "LinkAvatar":currentUser_2.linkAvatar,
+                    "Diachi": "",
+                    "SDT": "",
+                    "TenCT": "" ]
                 
                 tableUser.setValue(t1)
                 let url:URL = URL(string: currentUser_2.linkAvatar)!
