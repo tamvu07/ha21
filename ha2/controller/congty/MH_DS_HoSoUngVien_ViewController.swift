@@ -7,6 +7,7 @@
 //
 
 import UIKit
+var visitor_HSUV:Hosoungtuyen!
 
 class MH_DS_HoSoUngVien_ViewController: UIViewController {
     var array_Hosoungvien:Array<Hosoungtuyen> = Array<Hosoungtuyen>()
@@ -20,11 +21,11 @@ class MH_DS_HoSoUngVien_ViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
-        let nidName = UINib(nibName: "Cell_MH_HoSoUngTuyen_TableViewCell", bundle: nil)
-        tableView.register(nidName, forCellReuseIdentifier: "Cell_MH_HoSoUngTuyen")
+        let nidName2 = UINib(nibName: "Cell_MH_HoSoUngTuyen_TableViewCell", bundle: nil)
+        tableView.register(nidName2, forCellReuseIdentifier: "Cell_MH_HoSoUngTuyen")
         // lay thong tin cua ung vien da nop ho so ve
-       let  tablename = ref.child("Nguoidung").child("Congty")
-        tablename.observe(.childAdded, with: { (snapshot) in
+       let  tablename1 = ref.child("Nguoidung").child("Congty")
+        tablename1.observe(.childAdded, with: { (snapshot) in
             // nếu lấy được dữ liệu postDict từ sever về và id của user có trong postDict
             if let postDict = snapshot.value as? [String : AnyObject], (currentUser_2.id)! == snapshot.key
             {
@@ -32,13 +33,19 @@ class MH_DS_HoSoUngVien_ViewController: UIViewController {
                 {
                     if((postDict["Hosoungtuyen"]) != nil)
                     {
-                        let HS = (postDict["Hosoungtuyen"]) as! NSMutableDictionary
-                        let ID_Hoso_Ungtuyen:String = HS["ID_Hoso_Ungven"] as? String ?? "0"
-                        let Nghanh:String = HS["Nganh"] as? String ?? "000"
-                        let Vitrituyen:String = HS["Vitrituyen"] as? String ?? "..."
                         
-                        let HSUT:Hosoungtuyen = Hosoungtuyen(id: ID_Hoso_Ungtuyen, nghanh: Nghanh, vitrituyen: Vitrituyen)
-                        self.array_Hosoungvien.append(HSUT)
+                        if let _ = postDict["Hosoungtuyen"] {
+                            for item in postDict["Hosoungtuyen"] as! NSMutableDictionary {
+                                    let HS = item.value as! [String:Any]
+                                let ID_Hoso_Ungtuyen:String = (HS["ID_Hoso_Ungven"])! as? String ?? "0"
+                                let Nghanh:String = (HS["Nganh"])! as? String ?? "000"
+                                let Vitrituyen:String = (HS["Vitrituyen"])! as? String ?? "..."
+                                let HSUT:Hosoungtuyen = Hosoungtuyen(id: ID_Hoso_Ungtuyen, nghanh: Nghanh, vitrituyen: Vitrituyen)
+                                self.array_Hosoungvien.append(HSUT)
+                                self.tableView.reloadData()
+                            }
+                        }
+
                     }
                 }
 
@@ -59,13 +66,14 @@ extension MH_DS_HoSoUngVien_ViewController: UITableViewDelegate , UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return array_Hosoungvien.count
+        return self.array_Hosoungvien.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell_MH_HoSoUngTuyen", for: indexPath) as! Cell_MH_HoSoUngTuyen_TableViewCell
         
-        get_ungvien.shared.fetchData(tableName: ref.child("Nguoidung/Ungvien"), currentUserId: "\(array_Hosoungvien[indexPath.row].id)") { (UngVien_New, err) in
+        get_ungvien.shared.fetchData(tableName: ref.child("Nguoidung/Ungvien"), currentUserId: array_Hosoungvien[indexPath.row].id) { (UngVien_New, err) in
             if err != "" {
                 print(err)
             }
@@ -87,13 +95,18 @@ extension MH_DS_HoSoUngVien_ViewController: UITableViewDelegate , UITableViewDat
                     print("khong lay dc du lieu !")
                 }
             }
-        
+
         }
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        visitor_HSUV = array_Hosoungvien[indexPath.row]
+        // chuyen man hinh
     }
     
 }
