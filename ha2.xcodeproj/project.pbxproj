@@ -27,6 +27,11 @@
 		1845AE6B225EE0A0004C0B8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1845AE6A225EE0A0004C0B8E /* Assets.xcassets */; };
 		1845AE6E225EE0A0004C0B8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1845AE6C225EE0A0004C0B8E /* LaunchScreen.storyboard */; };
 		1845AE7A225EE259004C0B8E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1845AE79225EE259004C0B8E /* GoogleService-Info.plist */; };
+		186F6F022293A40500D77823 /* MH_DangViecLam_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186F6F012293A40500D77823 /* MH_DangViecLam_ViewController.swift */; };
+		186F6F042293AED000D77823 /* get_Congty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186F6F032293AED000D77823 /* get_Congty.swift */; };
+		186F6F062293AF8A00D77823 /* Thongtincanhan_CT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186F6F052293AF8A00D77823 /* Thongtincanhan_CT.swift */; };
+		186F6F082293B05B00D77823 /* Thongtintuyendung.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186F6F072293B05B00D77823 /* Thongtintuyendung.swift */; };
+		186F6F0A2293B11500D77823 /* Hosoungtuyen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186F6F092293B11500D77823 /* Hosoungtuyen.swift */; };
 		18783968227A9FC9001C1E12 /* MH_Search_01_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18783967227A9FC9001C1E12 /* MH_Search_01_ViewController.swift */; };
 		18908B58228FEC6C009DD6CB /* Thongtincanhan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18908B57228FEC6C009DD6CB /* Thongtincanhan.swift */; };
 		18908B5A228FED08009DD6CB /* Thongtinlienhe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18908B59228FED08009DD6CB /* Thongtinlienhe.swift */; };
@@ -36,7 +41,6 @@
 		18A516AE226030BD0003F2E8 /* TrangChu_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A516AD226030BD0003F2E8 /* TrangChu_ViewController.swift */; };
 		18DA6871228861390019E23F /* MH_XemTruocHoSo_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DA6870228861390019E23F /* MH_XemTruocHoSo_ViewController.swift */; };
 		18DBF96D2292841E005D5FF5 /* MH_DS_HoSoUngVien_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBF96C2292841E005D5FF5 /* MH_DS_HoSoUngVien_ViewController.swift */; };
-		18DBF9702292A783005D5FF5 /* Hosoungtuyen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBF96F2292A783005D5FF5 /* Hosoungtuyen.swift */; };
 		18DEF3812260B7470058DB80 /* MH_Trang_Chu_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DEF3802260B7470058DB80 /* MH_Trang_Chu_ViewController.swift */; };
 		18DEF3832260CC400058DB80 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DEF3822260CC400058DB80 /* User.swift */; };
 		18E2A2FE22620018007638F6 /* CongTy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E2A2FD22620018007638F6 /* CongTy.swift */; };
@@ -74,6 +78,11 @@
 		1845AE6D225EE0A0004C0B8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1845AE6F225EE0A0004C0B8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1845AE79225EE259004C0B8E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		186F6F012293A40500D77823 /* MH_DangViecLam_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MH_DangViecLam_ViewController.swift; sourceTree = "<group>"; };
+		186F6F032293AED000D77823 /* get_Congty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = get_Congty.swift; sourceTree = "<group>"; };
+		186F6F052293AF8A00D77823 /* Thongtincanhan_CT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thongtincanhan_CT.swift; sourceTree = "<group>"; };
+		186F6F072293B05B00D77823 /* Thongtintuyendung.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thongtintuyendung.swift; sourceTree = "<group>"; };
+		186F6F092293B11500D77823 /* Hosoungtuyen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hosoungtuyen.swift; sourceTree = "<group>"; };
 		18783967227A9FC9001C1E12 /* MH_Search_01_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MH_Search_01_ViewController.swift; sourceTree = "<group>"; };
 		18908B57228FEC6C009DD6CB /* Thongtincanhan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thongtincanhan.swift; sourceTree = "<group>"; };
 		18908B59228FED08009DD6CB /* Thongtinlienhe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thongtinlienhe.swift; sourceTree = "<group>"; };
@@ -83,7 +92,6 @@
 		18A516AD226030BD0003F2E8 /* TrangChu_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrangChu_ViewController.swift; sourceTree = "<group>"; };
 		18DA6870228861390019E23F /* MH_XemTruocHoSo_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MH_XemTruocHoSo_ViewController.swift; sourceTree = "<group>"; };
 		18DBF96C2292841E005D5FF5 /* MH_DS_HoSoUngVien_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MH_DS_HoSoUngVien_ViewController.swift; sourceTree = "<group>"; };
-		18DBF96F2292A783005D5FF5 /* Hosoungtuyen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hosoungtuyen.swift; sourceTree = "<group>"; };
 		18DEF3802260B7470058DB80 /* MH_Trang_Chu_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MH_Trang_Chu_ViewController.swift; sourceTree = "<group>"; };
 		18DEF3822260CC400058DB80 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		18E2A2FD22620018007638F6 /* CongTy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongTy.swift; sourceTree = "<group>"; };
@@ -230,7 +238,10 @@
 		18DBF96E2292A69E005D5FF5 /* congty */ = {
 			isa = PBXGroup;
 			children = (
-				18DBF96F2292A783005D5FF5 /* Hosoungtuyen.swift */,
+				186F6F032293AED000D77823 /* get_Congty.swift */,
+				186F6F052293AF8A00D77823 /* Thongtincanhan_CT.swift */,
+				186F6F072293B05B00D77823 /* Thongtintuyendung.swift */,
+				186F6F092293B11500D77823 /* Hosoungtuyen.swift */,
 			);
 			path = congty;
 			sourceTree = "<group>";
@@ -251,6 +262,7 @@
 				180CE01F2291B0E4006D459C /* Cell */,
 				18EECA85228AD73700AAB597 /* MH_chucnang_CT_ViewController.swift */,
 				18DBF96C2292841E005D5FF5 /* MH_DS_HoSoUngVien_ViewController.swift */,
+				186F6F012293A40500D77823 /* MH_DangViecLam_ViewController.swift */,
 			);
 			path = congty;
 			sourceTree = "<group>";
@@ -413,6 +425,7 @@
 				1818F90E227C6B01009D0169 /* CELL2_Taohoso_TableViewCell.swift in Sources */,
 				1818F90A227C669A009D0169 /* MH_Taohoso_ViewController.swift in Sources */,
 				1845AE66225EE09E004C0B8E /* ViewController.swift in Sources */,
+				186F6F062293AF8A00D77823 /* Thongtincanhan_CT.swift in Sources */,
 				18DEF3812260B7470058DB80 /* MH_Trang_Chu_ViewController.swift in Sources */,
 				18DA6871228861390019E23F /* MH_XemTruocHoSo_ViewController.swift in Sources */,
 				18EECA86228AD73700AAB597 /* MH_chucnang_CT_ViewController.swift in Sources */,
@@ -425,12 +438,15 @@
 				180CE0252291B33A006D459C /* Cell_MH_HoSoUngTuyen_TableViewCell.swift in Sources */,
 				18908B58228FEC6C009DD6CB /* Thongtincanhan.swift in Sources */,
 				1830E3422290E713001B34B8 /* MH_nopHoSo_thanhcong_ViewController.swift in Sources */,
+				186F6F0A2293B11500D77823 /* Hosoungtuyen.swift in Sources */,
+				186F6F042293AED000D77823 /* get_Congty.swift in Sources */,
+				186F6F022293A40500D77823 /* MH_DangViecLam_ViewController.swift in Sources */,
 				18908B5E228FF495009DD6CB /* UngVien_New.swift in Sources */,
+				186F6F082293B05B00D77823 /* Thongtintuyendung.swift in Sources */,
 				18E2A30022620EF2007638F6 /* CELLS_Trang_Chu_TableViewCell.swift in Sources */,
 				18232C90227B499700D9639A /* MH_Search_01_01_01ViewController.swift in Sources */,
 				18783968227A9FC9001C1E12 /* MH_Search_01_ViewController.swift in Sources */,
 				18908B5A228FED08009DD6CB /* Thongtinlienhe.swift in Sources */,
-				18DBF9702292A783005D5FF5 /* Hosoungtuyen.swift in Sources */,
 				1804A2392266341600A8F0B8 /* MH_ChiTiet_CongTy_ViewController.swift in Sources */,
 				18A516AE226030BD0003F2E8 /* TrangChu_ViewController.swift in Sources */,
 				1818F908227C35BA009D0169 /* MH_Search_01_01_01_Chitietcongty_ViewController.swift in Sources */,

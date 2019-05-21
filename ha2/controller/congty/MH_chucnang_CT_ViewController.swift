@@ -23,19 +23,7 @@ class MH_chucnang_CT_ViewController: UIViewController, UITableViewDataSource,UIT
     
     
     @IBAction func bt_cancel(_ sender: Any) {
-        let alert:UIAlertController = UIAlertController(title: "Bạn chắc chắn muốn đăng xuất !", message: "Xin chọn", preferredStyle: .alert)
-        // tao ra 2 button
-        let bt_1:UIAlertAction = UIAlertAction(title: "Đăng Xuất", style: .default) { (UIAlertAction) in
-            // nho man hinh chinh truy cap den no
-//            self.isLogOut()
-            self.f.dangxuat()
-            self.navigationController?.popToRootViewController(animated: false)
-        }
-        let bt_2:UIAlertAction = UIAlertAction(title: "Huỷ", style: .cancel, handler: nil)
-        
-        alert.addAction(bt_1)
-        alert.addAction(bt_2)
-        self.present(alert, animated: true, completion: nil)
+        self.Dangxuat()
     }
     
     func isLogOut()  {
@@ -93,7 +81,7 @@ class MH_chucnang_CT_ViewController: UIViewController, UITableViewDataSource,UIT
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if(indexPath.row == 0)
         {
-            
+            self.Dangxuat() 
         }
         if(indexPath.row == 1)
         {
@@ -101,7 +89,7 @@ class MH_chucnang_CT_ViewController: UIViewController, UITableViewDataSource,UIT
         }
         if(indexPath.row == 2)
         {
-            
+            chuyen_MH_DangViecLam()
         }
 
     }
@@ -116,6 +104,28 @@ class MH_chucnang_CT_ViewController: UIViewController, UITableViewDataSource,UIT
         let scr = storyboard?.instantiateViewController(withIdentifier: "MH_DS_HoSoUngVien")
         navigationController?.pushViewController(scr!, animated: true)
         
+    }
+    
+    func chuyen_MH_DangViecLam() {
+        let scr = storyboard?.instantiateViewController(withIdentifier: "MH_DangViecLam")
+        navigationController?.pushViewController(scr!, animated: true)
+        
+    }
+    
+    func Dangxuat()  {
+        let alert:UIAlertController = UIAlertController(title: "Bạn chắc chắn muốn đăng xuất !", message: "Xin chọn", preferredStyle: .alert)
+        // tao ra 2 button
+        let bt_1:UIAlertAction = UIAlertAction(title: "Đăng Xuất", style: .default) { (UIAlertAction) in
+            // nho man hinh chinh truy cap den no
+            //            self.isLogOut()
+            self.f.dangxuat()
+            self.navigationController?.popToRootViewController(animated: false)
+        }
+        let bt_2:UIAlertAction = UIAlertAction(title: "Huỷ", style: .cancel, handler: nil)
+        
+        alert.addAction(bt_1)
+        alert.addAction(bt_2)
+        self.present(alert, animated: true, completion: nil)
     }
     
 }
