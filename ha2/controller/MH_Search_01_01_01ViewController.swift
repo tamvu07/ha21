@@ -80,6 +80,7 @@ class MH_Search_01_01_01ViewController: UIViewController {
 //            self.tableView.reloadData()
 //        }
 //    })
+        print("nghe moi click chon la :.....\(tim_nghe_nganh.nghe).......")
         
     }
     
