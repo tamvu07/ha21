@@ -35,74 +35,13 @@ class MH_Search_01_ViewController: UIViewController {
     var congty_hientai: Congty_New = Congty_New.init(ID_Congty: "", quanly_thongtintuyendung: [], quanly_hosoungtuyen: [], thongtincanhanCT: Thongtincanhan_CT.init(email: "", linkAvatar: "", diachi: "", tenCT: "", sdt: "") )
     var lay_nghanh_idcongty : [get_nghanh_idCT] = []
     
-//    var dem_CT:[Int] = []
-//    var dem_ten_CT:[String] = []
-//    var ten_nghanh:[String] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
         SearchBar.delegate = self
         tableView.dataSource = self
         tableView.delegate = self
-        // Do any additional setup after loading the view.
-        
-//        var tablename = ref.child("Nguoidung").child("Congty")
-//        // Listen for new comments in the Firebase database
-//        tablename.observe(.childAdded, with: { (snapshot) in
-//            // nếu lấy được dữ liệu postDict từ sever về và id của user có trong postDict
-//           let postDict = snapshot.value as? [String : AnyObject]
-//            if(postDict != nil)
-//            {
-//                // lay danh sach cai nghanh cua cony ty ve
-//                get_Congty.shared.fetchData(tableName: ref.child("Nguoidung/Congty"), currentUserId: snapshot.key) { (congty, err) in
-//                    if err != "" {
-//                        print(err)
-//                    }
-//                    else {
-//                        self.congty_hientai = congty
-//                        var m: [Quanly_Thongtintuyendung] = []
-//                        var N_ID_CT: QL_nhung_nghanh_CT = QL_nhung_nghanh_CT.init(id_CT: "", mang_TTTD: [], mang_TTCN: Thongtincanhan_CT.init(email: "", linkAvatar: "", diachi: "", tenCT: "", sdt: ""))
-//
-//                        var t : Quanly_Thongtintuyendung = Quanly_Thongtintuyendung.init(id_TTTD: "", QL_thongtinTD: Thongtintuyendung_CT.init(luong: "", motachung: "", nghanh: "", soluongHS: "", vitrituyen: ""))
-//                        var t2 : Thongtincanhan_CT = Thongtincanhan_CT.init(email: "", linkAvatar: "", diachi: "", tenCT: "", sdt: "")
-//                        for item in self.congty_hientai.quanly_thongtintuyendung! {
-//                            t.id_TTTD = item.id_TTTD
-//                            t.QL_thongtinTD = item.QL_thongtinTD
-//
-//                            m.append(t)
-//                        }
-//
-//                        t2.email = self.congty_hientai.thongtincanhanCT?.email
-//                        t2.linkAvatar = self.congty_hientai.thongtincanhanCT?.linkAvatar
-//                        t2.diachi = self.congty_hientai.thongtincanhanCT?.diachi
-//                        t2.tenCT = self.congty_hientai.thongtincanhanCT?.tenCT
-//                        t2.sdt = self.congty_hientai.thongtincanhanCT?.sdt
-//
-//
-//                        N_ID_CT.id_CT = snapshot.key
-//                        N_ID_CT.mang_TTTD = m
-//                        N_ID_CT.mang_TTCN = t2
-//                        self.nganh_nhieu_CT.append(N_ID_CT)
-//                    }
-//                }
-//            }
-//
-//        })
-//
-//        var CT_dem = 0
-//        var Ng_dem = 0
-//        for item in nganh_nhieu_CT{
-//
-//            for item2 in item.mang_TTTD! {
-//                ten_nghanh.append(item2.QL_thongtinTD?.nghanh as! String)
-//            }
-//            CT_dem = CT_dem + 1
-//            dem_CT.append(CT_dem)
-//            dem_ten_CT.append("\(item.mang_TTCN?.tenCT)")
-//        }
-//
-        
-        
-        ////
+
         var tablename = ref.child("Nguoidung").child("Congty")
         // Listen for new comments in the Firebase database
         tablename.observe(.childAdded, with: { (snapshot) in

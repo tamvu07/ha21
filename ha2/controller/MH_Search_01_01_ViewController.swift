@@ -10,10 +10,14 @@ import UIKit
 var JOB:String!
 var t1:Int!
 var t2:Array<String>!
+var tim_nghe_nganh: get_nghe_nghanh_idCT!
 class MH_Search_01_01_ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var SearchBar: UISearchBar!
+    var lay_nghe_nghanh_idcongty : [get_nghe_nghanh_idCT] = []
+       var congty_hientai: Congty_New = Congty_New.init(ID_Congty: "", quanly_thongtintuyendung: [], quanly_hosoungtuyen: [], thongtincanhanCT: Thongtincanhan_CT.init(email: "", linkAvatar: "", diachi: "", tenCT: "", sdt: "") )
+    
     let Array_job_1 = [
         "Nhóm ngành sản xuất và chế biến",
         "Nhóm ngành kiến trúc và xây dựng",
@@ -248,7 +252,46 @@ class MH_Search_01_01_ViewController: UIViewController {
         
         // lay ra nghe trong nghanh
         print("nghanh vua chon la :...\(timnganh.nghanh),,,,,,\n")
+        var tablename = ref.child("Nguoidung").child("Congty")
+        // Listen for new comments in the Firebase database
+        tablename.observe(.childAdded, with: { (snapshot) in
+            // nếu lấy được dữ liệu postDict từ sever về và id của user có trong postDict
+            let postDict = snapshot.value as? [String : AnyObject]
+            if(postDict != nil)
+            {
+                // lay danh sach cai nghanh cua cony ty ve
+                get_Congty.shared.fetchData(tableName: ref.child("Nguoidung/Congty"), currentUserId: snapshot.key) { (congty, err) in
+                    if err != "" {
+                        print(err)
+                    }
+                    else {
+                        print("....cong ty la :\(congty).............\n")
+                        print("....ten cong ty la :\(congty.thongtincanhanCT?.tenCT).............\n")
+                        self.congty_hientai = congty
+                        // lay id cong ty
+                        
+                        for item in self.congty_hientai.quanly_thongtintuyendung! {
+                        // lay ra nghe trong nghanh cua tung cong ty
+                            if(item.QL_thongtinTD?.nghanh == timnganh.nghanh)
+                            {
+                                var nghe_nghanh_ID: get_nghe_nghanh_idCT = get_nghe_nghanh_idCT.init(id_CT: self.congty_hientai.ID_Congty!, nghe: (item.QL_thongtinTD?.vitrituyen)!, nghanh: timnganh.nghanh!)
+                                // dua id cong ty va nghe va nganh vao 1 mang
+                                self.lay_nghe_nghanh_idcongty.append(nghe_nghanh_ID)
+                                
+                            }
+                          
+                        }
+                        
+                        self.tableView.reloadData()
+                        
+                    }
+                }
+            }
+            
+        })
         
+
+        ///
         
     }
     
@@ -296,7 +339,8 @@ extension MH_Search_01_01_ViewController: UITableViewDataSource,UITableViewDeleg
         if searching {
             return search_Job_new.count
         }else{
-            return t2.count
+//            return t2.count
+            return lay_nghe_nghanh_idcongty.count
         }
         
     }
@@ -306,7 +350,8 @@ extension MH_Search_01_01_ViewController: UITableViewDataSource,UITableViewDeleg
         if searching {
             cell.textLabel?.text = search_Job_new[indexPath.row]
         }else{
-            cell.textLabel?.text = t2[indexPath.row] as! String
+//            cell.textLabel?.text = t2[indexPath.row] as! String
+            cell.textLabel?.text = lay_nghe_nghanh_idcongty[indexPath.row].nghe
         }
         return cell
     }
@@ -316,9 +361,12 @@ extension MH_Search_01_01_ViewController: UITableViewDataSource,UITableViewDeleg
                 if searching {
                     text = search_Job_new[indexPath.row]
                 }else{
-                    text = t2[indexPath.row]
+//                    text = t2[indexPath.row]
+                    text = lay_nghe_nghanh_idcongty[indexPath.row].nghe!
                 }
                 JOB = text
+        let a:get_nghe_nghanh_idCT = get_nghe_nghanh_idCT.init(id_CT: lay_nghe_nghanh_idcongty[indexPath.row].id_CT!, nghe: lay_nghe_nghanh_idcongty[indexPath.row].nghe!, nghanh: lay_nghe_nghanh_idcongty[indexPath.row].nghanh!)
+        tim_nghe_nganh = a
                 goto_MH_Search_01_01_01()
     }
 }
