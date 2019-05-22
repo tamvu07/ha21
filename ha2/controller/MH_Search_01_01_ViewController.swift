@@ -246,6 +246,10 @@ class MH_Search_01_01_ViewController: UIViewController {
             t2 = (ARR_JOB[9].sorted())
         }
         
+        // lay ra nghe trong nghanh
+        print("nghanh vua chon la :...\(timnganh.nghanh),,,,,,\n")
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
