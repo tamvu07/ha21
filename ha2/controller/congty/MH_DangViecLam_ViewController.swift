@@ -41,7 +41,7 @@ class MH_DangViecLam_ViewController: UIViewController {
             let mota = txt_mota.text
             let soluongHS = txt_soluongHS.text
             
-            let table_dangviec = ref.child("Nguoidung").child("Congty").child(currentUser_2.id).child("Thongtintuyendung")
+            let table_dangviec = ref.child("Nguoidung").child("Congty").child(currentUser_2.id).child("Thongtintuyendung").childByAutoId()
             
             let t1:Dictionary<String,String> = [
                 "Luong": luong!,
