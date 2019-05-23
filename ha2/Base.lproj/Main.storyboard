@@ -1030,6 +1030,7 @@
                         <outlet property="lb_mucluong" destination="YQm-YN-1ce" id="9ou-yK-zdX"/>
                         <outlet property="lb_sdt" destination="SHc-TW-Hil" id="REZ-yR-fZj"/>
                         <outlet property="lb_tenct" destination="QzB-3C-OAG" id="bBt-Pm-Skc"/>
+                        <outlet property="txt_mota" destination="klp-Et-4NI" id="Rtu-JG-dHN"/>
                         <segue destination="dcJ-y3-XM3" kind="push" id="7M6-9e-i0I"/>
                         <segue destination="KN1-eE-78q" kind="push" id="sxC-GV-93P"/>
                     </connections>

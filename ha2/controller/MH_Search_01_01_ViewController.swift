@@ -251,7 +251,7 @@ class MH_Search_01_01_ViewController: UIViewController {
         }
         
         // lay ra nghe trong nghanh
-        print("nghanh vua chon la :...\(timnganh.nghanh),,,,,,\n")
+ 
         var tablename = ref.child("Nguoidung").child("Congty")
         // Listen for new comments in the Firebase database
         tablename.observe(.childAdded, with: { (snapshot) in
