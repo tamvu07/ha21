@@ -14,6 +14,7 @@ class MH_Search_01_01_01_DaCoHoSo_Chitietcongty_ViewController: UIViewController
     @IBOutlet weak var bt_chon1_CV: DLRadioButton!
     let ref = Database.database().reference()
     @IBOutlet weak var lb_vitrimuontuyen: UILabel!
+    var chon_HS = 0
     
     var currentUser: UngVien_New = UngVien_New.init(userID: "", Thongtincanhan: Thongtincanhan.init(email: currentUser_1.email, linkAvatar: currentUser_1.linkAvatar, hoso: currentUser_1.status_HS), Thongtinlienhe: Thongtinlienhe.init(email: "", gioitinh: "", honnhan: "", hoten: "", ngaysinh: "", sdt: "", thanhpho: "", diachi: ""), Thongtintongquan: Thongtintongquan.init(capbachientai: "", capbacmongmuon: "", diadiemmongmuon: "", hinhthuclamviec: "", mucluongtoithieu: "", nghanhnghemongmuon: "", sonamkinhnghiem: "", trinhdohocvan: "", vitrimongmuon: ""))
     
@@ -31,7 +32,8 @@ class MH_Search_01_01_01_DaCoHoSo_Chitietcongty_ViewController: UIViewController
             }
         }
         
-        lb_vitrimuontuyen.text = vistor.congviec
+//        lb_vitrimuontuyen.text = vistor.congviec
+        lb_vitrimuontuyen.text = chitiet_congty.nghe
         
 //        var tablename = ref.child("Nguoidung").child("Ungvien")
 //        // Listen for new comments in the Firebase database
@@ -63,15 +65,9 @@ class MH_Search_01_01_01_DaCoHoSo_Chitietcongty_ViewController: UIViewController
             RadioButtonValue = radioButton.selected()?.titleLabel?.text!
             //            print(String(format: "%@ is selected.\n", RadioButtonValue));
             let x:String = String(format: "%@", RadioButtonValue);
-            if(x == "Ứng viên")
+            if(x == self.currentUser.Thongtintongquan?.vitrimongmuon as! String)
             {
-                q = x
-                nguoidung = 0
-            }else
-                if(x == "Công ty")
-                {
-                    q = x
-                    nguoidung = 1
+               chon_HS = 1
             }
         }
     }
@@ -83,30 +79,41 @@ class MH_Search_01_01_01_DaCoHoSo_Chitietcongty_ViewController: UIViewController
     }
     
     @IBAction func bt_nopHoSo(_ sender: Any) {
-        
+        if(chon_HS == 1)
+        {
+            
+            var tablename = ref.child("Nguoidung").child("Congty")
+            // Listen for new comments in the Firebase database
+            tablename.observe(.childAdded, with: { (snapshot) in
+                // nếu lấy được dữ liệu postDict từ sever về và id của user có trong postDict
+                if let postDict = snapshot.value as? [String : AnyObject], chitiet_congty.id_CT == snapshot.key
+                {
+                    var tablename2 = self.ref.child("Nguoidung").child("Congty").child("\(snapshot.key)").child("Hosoungtuyen").childByAutoId()
+                    let tt:Dictionary<String,String> = [
+                        "ID_Hoso_Ungven": currentUser_1.id,
+                        "Nganh": chitiet_congty.nghanh!,
+                        "Vitrituyen": chitiet_congty.nghe!
+                    ]
+                    tablename2.setValue(tt)
+                    let alert:UIAlertController = UIAlertController(title: "Đã nộp đơn, xin bạn chờ phản hồi từ công ty.", message: "", preferredStyle: .alert)
+                    let bt:UIAlertAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    alert.addAction(bt)
+                    self.present(alert, animated: true, completion: nil)
+                    
+                }else{
+                    print("khong tim thay ung vien !")
+                }
+            })
+            
+            
+        }else{
+            let alert:UIAlertController = UIAlertController(title: "Bạn phải chọn hồ sơ !", message: "", preferredStyle: .alert)
+            let bt:UIAlertAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alert.addAction(bt)
+            self.present(alert, animated: true, completion: nil)
+        }
         /////
-        var tablename = ref.child("Nguoidung").child("Congty")
-        // Listen for new comments in the Firebase database
-        tablename.observe(.childAdded, with: { (snapshot) in
-            // nếu lấy được dữ liệu postDict từ sever về và id của user có trong postDict
-            if let postDict = snapshot.value as? [String : AnyObject], vistor.idCT == snapshot.key
-            {
-                var tablename2 = self.ref.child("Nguoidung").child("Congty").child("\(snapshot.key)").child("Hosoungtuyen").childByAutoId()
-                let tt:Dictionary<String,String> = [
-                    "ID_Hoso_Ungven": currentUser_1.id,
-                    "Nganh": vistor.nghanh,
-                    "Vitrituyen": vistor.congviec
-                ]
-                tablename2.setValue(tt)
-                let alert:UIAlertController = UIAlertController(title: "Đã nộp đơn, xin bạn chờ phản hồi từ công ty.", message: "", preferredStyle: .alert)
-                let bt:UIAlertAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                alert.addAction(bt)
-                self.present(alert, animated: true, completion: nil)
-                
-            }else{
-                print("khong tim thay ung vien !")
-            }
-        })
+
                 let scr = storyboard?.instantiateViewController(withIdentifier: "MH_nopHoSo_thanhcong")
         self.navigationController?.pushViewController(scr!, animated: true)
     }
