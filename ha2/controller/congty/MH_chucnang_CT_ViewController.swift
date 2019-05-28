@@ -43,7 +43,7 @@ class MH_chucnang_CT_ViewController: UIViewController, UITableViewDataSource,UIT
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //        print("............\(array_congty.count)......................")
-        return 3
+        return 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -66,9 +66,13 @@ class MH_chucnang_CT_ViewController: UIViewController, UITableViewDataSource,UIT
         {
             cell.textLabel?.text = "Xem hồ sơ ứng viên"
             cell.detailTextLabel?.text = ""
-        }else
+        }else if(indexPath.row == 2)
         {
             cell.textLabel?.text = "Đăng việc làm"
+            cell.detailTextLabel?.text = ""
+        }else if(indexPath.row == 3)
+        {
+            cell.textLabel?.text = "Thông tin cá nhân"
             cell.detailTextLabel?.text = ""
         }
         return cell
@@ -91,6 +95,10 @@ class MH_chucnang_CT_ViewController: UIViewController, UITableViewDataSource,UIT
         {
             chuyen_MH_DangViecLam()
         }
+        if(indexPath.row == 3)
+        {
+            chuyen_MH_Thongtincanhan_CT()
+        }
 
     }
     
@@ -110,6 +118,11 @@ class MH_chucnang_CT_ViewController: UIViewController, UITableViewDataSource,UIT
         let scr = storyboard?.instantiateViewController(withIdentifier: "MH_DangViecLam")
         navigationController?.pushViewController(scr!, animated: true)
         
+    }
+    
+    func chuyen_MH_Thongtincanhan_CT() {
+        let scr = storyboard?.instantiateViewController(withIdentifier: "MH_Thongtincanhan_CT")
+        navigationController?.pushViewController(scr!, animated: true)
     }
     
     func Dangxuat()  {

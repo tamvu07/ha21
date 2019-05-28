@@ -55,7 +55,11 @@ class MH_DS_HoSoUngVien_ViewController: UIViewController {
         })
     }
     
-
+    func chuyen_MH_Xem_Chitiet_HoSo_UngVien(){
+        let scr = storyboard?.instantiateViewController(withIdentifier: "MH_Xem_Chitiet_HoSo_UngVien")
+        navigationController?.pushViewController(scr!, animated: true)
+        
+    }
 
 }
 
@@ -106,7 +110,7 @@ extension MH_DS_HoSoUngVien_ViewController: UITableViewDelegate , UITableViewDat
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         visitor_HSUV = array_Hosoungvien[indexPath.row]
-        // chuyen man hinh
+        chuyen_MH_Xem_Chitiet_HoSo_UngVien()
     }
     
 }

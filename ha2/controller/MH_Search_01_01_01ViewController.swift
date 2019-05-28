@@ -43,13 +43,17 @@ class MH_Search_01_01_01ViewController: UIViewController {
                         
                         for item in self.congty_hientai.quanly_thongtintuyendung! {
                             // lay ra nghe trong nghanh cua tung cong ty
-                            if((item.QL_thongtinTD?.nghanh == timnganh.nghanh) && (item.QL_thongtinTD?.vitrituyen == tim_nghe_nganh.nghe))
-                            {
-                                var chitiet_CT: get_chitiet_CT = get_chitiet_CT.init(id_CT: self.congty_hientai.ID_Congty!,ten: (self.congty_hientai.thongtincanhanCT?.tenCT)! ,linkAvatar: (self.congty_hientai.thongtincanhanCT?.linkAvatar)!, nghe: tim_nghe_nganh.nghe!, nghanh: timnganh.nghanh!, luong: (item.QL_thongtinTD?.luong)!, motacongviec: (item.QL_thongtinTD?.motachung)!, email: (self.congty_hientai.thongtincanhanCT?.email)!, sdt: (self.congty_hientai.thongtincanhanCT?.sdt)!,diachi: (self.congty_hientai.thongtincanhanCT?.diachi)!)
-                                // dua id cong ty va nghe va nganh vao 1 mang
-                                self.lay_chitiet_congty.append(chitiet_CT)
-                                
+                            for item2 in item.QL_thongtinTD!{
+                                if((item2.nghanh == timnganh.nghanh) && (item2.vitrituyen == tim_nghe_nganh.nghe))
+                                {
+//                                    var chitiet_CT: get_chitiet_CT = get_chitiet_CT.init(id_CT: self.congty_hientai.ID_Congty!,ten: (self.congty_hientai.thongtincanhanCT?.tenCT)! ,linkAvatar: (self.congty_hientai.thongtincanhanCT?.linkAvatar)!, nghe: tim_nghe_nganh.nghe as! String, nghanh: timnganh.nghanh!, luong: (item2.nghanh, motacongviec: (item2.motachung)!, email: (self.congty_hientai.thongtincanhanCT?.email)!, sdt: (self.congty_hientai.thongtincanhanCT?.sdt)!,diachi: (self.congty_hientai.thongtincanhanCT?.diachi)!))
+                                    var chitiet_CT: get_chitiet_CT = get_chitiet_CT.init(id_CT: self.congty_hientai.ID_Congty!, ten: (self.congty_hientai.thongtincanhanCT?.tenCT)!, linkAvatar: (self.congty_hientai.thongtincanhanCT?.linkAvatar)!, nghe: (item2.vitrituyen)!, nghanh: (item2.nghanh)!, luong: (item2.luong)!, motacongviec: (item2.motachung)!, email: (self.congty_hientai.thongtincanhanCT?.email)!, sdt: (self.congty_hientai.thongtincanhanCT?.sdt)!, diachi: (self.congty_hientai.thongtincanhanCT?.diachi)!)
+                                    // dua id cong ty va nghe va nganh vao 1 mang
+                                    self.lay_chitiet_congty.append(chitiet_CT)
+                                    
+                                }
                             }
+
                             
                         }
                         self.tableView.reloadData()

@@ -9,9 +9,9 @@
 import Foundation
 class Quanly_Thongtintuyendung : Codable {
     var id_TTTD : String?
-    var QL_thongtinTD : Thongtintuyendung_CT?
+    var QL_thongtinTD : [Thongtintuyendung_CT]?
     
-    init(id_TTTD: String, QL_thongtinTD: Thongtintuyendung_CT) {
+    init(id_TTTD: String, QL_thongtinTD: [Thongtintuyendung_CT]) {
         self.id_TTTD = id_TTTD
         self.QL_thongtinTD = QL_thongtinTD
     }
