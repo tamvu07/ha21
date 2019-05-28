@@ -251,7 +251,6 @@ class MH_Search_01_01_ViewController: UIViewController {
         }
         
         // lay ra nghe trong nghanh
- 
         var tablename = ref.child("Nguoidung").child("Congty")
         // Listen for new comments in the Firebase database
         tablename.observe(.childAdded, with: { (snapshot) in
@@ -272,25 +271,29 @@ class MH_Search_01_01_ViewController: UIViewController {
                         
                         for item in self.congty_hientai.quanly_thongtintuyendung! {
                         // lay ra nghe trong nghanh cua tung cong ty
-                            if(item.QL_thongtinTD?.nghanh == timnganh.nghanh)
-                            {
-                                var nghe_nghanh_ID: get_nghe_nghanh_idCT = get_nghe_nghanh_idCT.init(id_CT: self.congty_hientai.ID_Congty!, nghe: (item.QL_thongtinTD?.vitrituyen)!, nghanh: timnganh.nghanh!)
-                                // dua id cong ty va nghe va nganh vao 1 mang
-                                self.lay_nghe_nghanh_idcongty.append(nghe_nghanh_ID)
-                                
+//                            if(item.QL_thongtinTD?.nghanh == timnganh.nghanh)
+//                            {
+//                                var nghe_nghanh_ID: get_nghe_nghanh_idCT = get_nghe_nghanh_idCT.init(id_CT: self.congty_hientai.ID_Congty!, nghe: (item.QL_thongtinTD?.vitrituyen)!, nghanh: timnganh.nghanh!)
+//                                // dua id cong ty va nghe va nganh vao 1 mang
+//                                self.lay_nghe_nghanh_idcongty.append(nghe_nghanh_ID)
+//
+//                            }
+                            for item2 in item.QL_thongtinTD!{
+                                if(item2.nghanh == timnganh.nghanh)
+                                {
+                                    var nghe_nghanh_ID: get_nghe_nghanh_idCT = get_nghe_nghanh_idCT.init(id_CT: self.congty_hientai.ID_Congty!, nghe: (item2.vitrituyen)!, nghanh: timnganh.nghanh!)
+                                    // dua id cong ty va nghe va nganh vao 1 mang
+                                    self.lay_nghe_nghanh_idcongty.append(nghe_nghanh_ID)
+                                    
+                                }
                             }
                           
                         }
-                        
                         self.tableView.reloadData()
-                        
                     }
                 }
             }
-            
         })
-        
-
         ///
         
     }

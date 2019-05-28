@@ -55,20 +55,31 @@ class MH_Search_01_ViewController: UIViewController {
                         print(err)
                     }
                     else {
-                        print("....cong ty la :\(congty).............\n")
-                        print("....ten cong ty la :\(congty.thongtincanhanCT?.tenCT).............\n")
                         self.congty_hientai = congty
                         // lay id cong ty
+                        var x = 0
                         
                         for item in self.congty_hientai.quanly_thongtintuyendung! {
-                            // lay nghanh
-                            var nghanh_ID: get_nghanh_idCT = get_nghanh_idCT.init(id_CT: self.congty_hientai.ID_Congty!, nghanh: (item.QL_thongtinTD?.nghanh)!)
-                            // dua id cong ty va nganh vao 1 mang
-                            self.lay_nghanh_idcongty.append(nghanh_ID)
+//                            var nghanh_ID: get_nghanh_idCT = get_nghanh_idCT.init(id_CT: self.congty_hientai.ID_Congty!, nghanh: (item.QL_thongtinTD?.nghanh)!)
+//                            self.lay_nghanh_idcongty.append(nghanh_ID)
+//                            print("item  la :.. \(item)....\n")
 //                            print("ID nghanh la :.. \(item.id_TTTD )....\n")
 //                            print("nghanh la :.. \(item.QL_thongtinTD?.nghanh )....\n")
-//                            print("luong la :.. \(item.QL_thongtinTD?.luong)....\n")
-
+                            var y = 0
+                            for item2 in item.QL_thongtinTD!{
+                               
+                                // lay nghanh
+//                                var nghanh_ID: get_nghanh_idCT = get_nghanh_idCT.init(id_CT: self.congty_hientai.ID_Congty!, nghanh: (item.QL_thongtinTD?.nghanh)!)
+                                var nghanh_ID: get_nghanh_idCT = get_nghanh_idCT.init(id_CT: self.congty_hientai.ID_Congty!, nghanh: item2.nghanh!)
+                                print("........ID la 1 la > : \(item.id_TTTD).........\n")
+                                print("........nghanh la 1 la > : \(item2.nghanh!).........\n")
+                                // dua id cong ty va nganh vao 1 mang
+                                self.lay_nghanh_idcongty.append(nghanh_ID)
+                                y = y + 1
+                                print(".....y la :\(y)........\n")
+                            }
+                            x = x + 1
+                             print(".....x la :\(x)........\n")
                         }
                        
                         self.tableView.reloadData()

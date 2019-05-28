@@ -36,7 +36,7 @@ class get_Congty {
                             ThongtinTD.nghanh = data["Nganh"] as? String
                             ThongtinTD.soluongHS = data["SoluongHS"] as? String
                             ThongtinTD.vitrituyen = data["Vitrituyen"] as? String
-                            QL_TTTD.append(Quanly_Thongtintuyendung.init(id_TTTD: item.key as! String, QL_thongtinTD: ThongtinTD ))
+                            QL_TTTD.append(Quanly_Thongtintuyendung.init(id_TTTD: item.key as! String, QL_thongtinTD: [ThongtinTD] ))
 
                             dem = dem + 1
                         }else{

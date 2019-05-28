@@ -14,7 +14,7 @@ import DLRadioButton
 import FirebaseStorage
 var RadioButtonValue:String!
 var q:String = ""
-class DangKy_ViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class DangKy_ViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var txt_email: UITextField!
     
@@ -27,6 +27,10 @@ class DangKy_ViewController: UIViewController,UIImagePickerControllerDelegate, U
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.txt_email.delegate = self
+        self.txt_pass.delegate = self
+        self.txt_repass.delegate = self
+        
         avatar.isUserInteractionEnabled = true
         let TapGesture =  UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
         self.avatar.addGestureRecognizer(TapGesture)
@@ -35,10 +39,23 @@ class DangKy_ViewController: UIViewController,UIImagePickerControllerDelegate, U
         txt_pass.resignFirstResponder()
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        print("co textfield nha....\n")
+        txt_email.resignFirstResponder()
+//        txt_pass.resignFirstResponder()
+//        txt_repass.resignFirstResponder()
+        return true
+    }
+    
+    
     // lam viec voi image
     @objc func handleTap(_ sender: UITapGestureRecognizer){
  
-        let alert:UIAlertController = UIAlertController(title: "thong bao", message: "chon", preferredStyle: .alert)
+        let alert:UIAlertController = UIAlertController(title: "", message: "Xin chọn", preferredStyle: .alert)
         // tao ra 2 button
         let btphoto:UIAlertAction = UIAlertAction(title: "pho to", style: .default) { (UIAlertAction) in
             // chon vao thu muc anh va lay anh o thu vien
