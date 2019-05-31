@@ -21,29 +21,41 @@ class MH_Xem_Chitiet_HoSo_UngVien_ViewController: UIViewController {
     @IBOutlet weak var txt_vitrimongmuon: UILabel!
     @IBOutlet weak var txt_capbachientai: UILabel!
     @IBOutlet weak var txt_capbacmongmuon: UILabel!
+    @IBOutlet weak var txt_trinhdocaonhat: UILabel!
+    @IBOutlet weak var diadiemmongmuon: UILabel!
+    @IBOutlet weak var txt_mucluongtoithieu: UILabel!
+    @IBOutlet weak var txt_hinhthuclamviec: UILabel!
+    @IBOutlet weak var txt_nghenghiepmongmuon: UILabel!
     
     
-    var currentUser: UngVien_New = UngVien_New.init(userID: "", Thongtincanhan: Thongtincanhan.init(email: currentUser_1.email, linkAvatar: currentUser_1.linkAvatar, hoso: currentUser_1.status_HS), Thongtinlienhe: Thongtinlienhe.init(email: "", gioitinh: "", honnhan: "", hoten: "", ngaysinh: "", sdt: "", thanhpho: "", diachi: ""), Thongtintongquan: Thongtintongquan.init(capbachientai: "", capbacmongmuon: "", diadiemmongmuon: "", hinhthuclamviec: "", mucluongtoithieu: "", nghanhnghemongmuon: "", sonamkinhnghiem: "", trinhdohocvan: "", vitrimongmuon: ""))
+    var currentUser: UngVien_New = UngVien_New.init(userID: "", Thongtincanhan: Thongtincanhan.init(email: "", linkAvatar: "", hoso: 0), Thongtinlienhe: Thongtinlienhe.init(email: "", gioitinh: "", honnhan: "", hoten: "", ngaysinh: "", sdt: "", thanhpho: "", diachi: ""), Thongtintongquan: Thongtintongquan.init(capbachientai: "", capbacmongmuon: "", diadiemmongmuon: "", hinhthuclamviec: "", mucluongtoithieu: "", nghanhnghemongmuon: "", sonamkinhnghiem: "", trinhdohocvan: "", vitrimongmuon: ""))
     override func viewDidLoad() {
         super.viewDidLoad()
 
         
         ////
-        get_ungvien.shared.fetchData(tableName: ref.child("Nguoidung/Ungvien"), currentUserId: currentUser_1.id) { (UngVien_New, err) in
+        get_ungvien.shared.fetchData(tableName: ref.child("Nguoidung/Ungvien"), currentUserId: visitor_HSUV.id) { (UngVien_New, err) in
             if err != "" {
                 print(err)
             }
             else {
                 self.currentUser = UngVien_New
-                self.txt_1.text = self.currentUser.Thongtintongquan?.vitrimongmuon
-                self.txt_2.text = self.currentUser.Thongtintongquan?.capbachientai
-                self.txt_3.text = self.currentUser.Thongtintongquan?.capbacmongmuon
-                self.txt_4.text = self.currentUser.Thongtintongquan?.nghanhnghemongmuon
-                self.txt_5.text = self.currentUser.Thongtintongquan?.diadiemmongmuon
-                self.txt_6.text = self.currentUser.Thongtintongquan?.trinhdohocvan
-                self.txt_7.text = self.currentUser.Thongtintongquan?.sonamkinhnghiem
-                self.txt_8.text = self.currentUser.Thongtintongquan?.hinhthuclamviec
-                self.txt_9.text = self.currentUser.Thongtintongquan?.mucluongtoithieu
+                self.txt_ten.text = self.currentUser.Thongtinlienhe?.hoten
+                self.txt_ngaysinh.text = self.currentUser.Thongtinlienhe?.ngaysinh
+                self.txt_gioitinh.text = self.currentUser.Thongtinlienhe?.gioitinh
+                self.txt_honnhan.text = self.currentUser.Thongtinlienhe?.honnhan
+                self.txt_email.text = self.currentUser.Thongtinlienhe?.email
+                self.txt_diachi.text = self.currentUser.Thongtinlienhe?.diachi
+                self.txt_sdt.text = self.currentUser.Thongtinlienhe?.sdt
+                
+                self.txt_vitrimongmuon.text = self.currentUser.Thongtintongquan?.vitrimongmuon
+                self.txt_capbachientai.text = self.currentUser.Thongtintongquan?.capbachientai
+                self.txt_capbacmongmuon.text = self.currentUser.Thongtintongquan?.capbacmongmuon
+                self.txt_trinhdocaonhat.text = self.currentUser.Thongtintongquan?.trinhdohocvan
+                self.diadiemmongmuon.text = self.currentUser.Thongtintongquan?.diadiemmongmuon
+                self.txt_mucluongtoithieu.text = self.currentUser.Thongtintongquan?.mucluongtoithieu
+                self.txt_hinhthuclamviec.text = self.currentUser.Thongtintongquan?.hinhthuclamviec
+                self.txt_nghenghiepmongmuon.text = self.currentUser.Thongtintongquan?.nghanhnghemongmuon
             }
         }
         /////

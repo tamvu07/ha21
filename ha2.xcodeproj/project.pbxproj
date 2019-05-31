@@ -14,6 +14,7 @@
 		1818F90A227C669A009D0169 /* MH_Taohoso_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1818F909227C669A009D0169 /* MH_Taohoso_ViewController.swift */; };
 		1818F90C227C6879009D0169 /* CELL1_Taohoso_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1818F90B227C6879009D0169 /* CELL1_Taohoso_TableViewCell.swift */; };
 		1818F90E227C6B01009D0169 /* CELL2_Taohoso_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1818F90D227C6B01009D0169 /* CELL2_Taohoso_TableViewCell.swift */; };
+		181F9118229ED5AF001ECCB7 /* MH_TRANGCHU_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F9117229ED5AF001ECCB7 /* MH_TRANGCHU_ViewController.swift */; };
 		18219F51225F5229006F2A0D /* DangKy_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18219F50225F5229006F2A0D /* DangKy_ViewController.swift */; };
 		18232C90227B499700D9639A /* MH_Search_01_01_01ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18232C8F227B499700D9639A /* MH_Search_01_01_01ViewController.swift */; };
 		1824EA3D2293EFDD0003044A /* Quanly_Thongtintuyendung.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1824EA3C2293EFDD0003044A /* Quanly_Thongtintuyendung.swift */; };
@@ -73,6 +74,7 @@
 		1818F909227C669A009D0169 /* MH_Taohoso_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MH_Taohoso_ViewController.swift; sourceTree = "<group>"; };
 		1818F90B227C6879009D0169 /* CELL1_Taohoso_TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CELL1_Taohoso_TableViewCell.swift; sourceTree = "<group>"; };
 		1818F90D227C6B01009D0169 /* CELL2_Taohoso_TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CELL2_Taohoso_TableViewCell.swift; sourceTree = "<group>"; };
+		181F9117229ED5AF001ECCB7 /* MH_TRANGCHU_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MH_TRANGCHU_ViewController.swift; sourceTree = "<group>"; };
 		18219F50225F5229006F2A0D /* DangKy_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DangKy_ViewController.swift; sourceTree = "<group>"; };
 		18232C8F227B499700D9639A /* MH_Search_01_01_01ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MH_Search_01_01_01ViewController.swift; sourceTree = "<group>"; };
 		1824EA3C2293EFDD0003044A /* Quanly_Thongtintuyendung.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quanly_Thongtintuyendung.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 				182608BD2285C98F001C349F /* MH_Search_01_01_01_DaCoHoSo_Chitietcongty_ViewController.swift */,
 				18DA6870228861390019E23F /* MH_XemTruocHoSo_ViewController.swift */,
 				1830E3412290E713001B34B8 /* MH_nopHoSo_thanhcong_ViewController.swift */,
+				181F9117229ED5AF001ECCB7 /* MH_TRANGCHU_ViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -497,6 +500,7 @@
 				182608BE2285C98F001C349F /* MH_Search_01_01_01_DaCoHoSo_Chitietcongty_ViewController.swift in Sources */,
 				18FD89532261722F000353B7 /* extension_function.swift in Sources */,
 				18337E3C227FD05100AEA1FC /* MH_Thongtintaikhoan_ViewController.swift in Sources */,
+				181F9118229ED5AF001ECCB7 /* MH_TRANGCHU_ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

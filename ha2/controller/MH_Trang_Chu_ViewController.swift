@@ -7,20 +7,20 @@
 //
 
 import UIKit
-var vistor:CongTy!
-var User_flag:Int!
-var User_name:String!
-var currentUser_1:User_1!
-var currentUser_2:User!
-import Firebase
-var Search_1_flag:Int!
-var tttk:Int!
-var tttq:Int!
-// tao lien ket voi database
-var ref = Database.database().reference()
-let storage = Storage.storage()
-let storageRef = storage.reference(forURL: "gs://authileha2.appspot.com")
-var nguoidung:Int!
+//var vistor:CongTy!
+//var User_flag:Int!
+//var User_name:String!
+//var currentUser_1:User_1!
+//var currentUser_2:User!
+//import Firebase
+//var Search_1_flag:Int!
+//var tttk:Int!
+//var tttq:Int!
+//// tao lien ket voi database
+//var ref = Database.database().reference()
+//let storage = Storage.storage()
+//let storageRef = storage.reference(forURL: "gs://authileha2.appspot.com")
+//var nguoidung:Int!
 
 class MH_Trang_Chu_ViewController: UIViewController, UITableViewDelegate,UITableViewDataSource{
 
